@@ -17,6 +17,7 @@ const Header = () => (
     <Link href="/mockdata">
       <a style={linkStyle}>Mockdata</a>
     </Link>
+
   </div>
 )
 

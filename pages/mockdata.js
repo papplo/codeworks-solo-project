@@ -1,36 +1,71 @@
-import Layout from '../components/MyLayout.js';
-import Link from 'next/link'
-import fetch from 'isomorphic-unfetch' /* So fetch works in the server and the browser */
-
-const listStyle = {
-  //margin: 15,
-}
+import Layout from  '../components/MyLayout.js';
+import Card from    '../components/Card.js';
+import fetch from   'isomorphic-unfetch' /* So fetch works in the server and the browser */
 
 const MockDigest = (props) => {
+console.log(props.posts);
   return (
       <Layout title="Welkome to tellUs">
-        <h3>These are the posts</h3>
         <ul>
           <style jsx>{`
             a {
               text-transform: capitalize;
             }
-            ul {padding: 0; margin: 0}
-            li {
-              list-style: none;
-              padding: 15px 15px; margin: 0;
-              background-color: #ccc;
-            }
-          `}</style>
+            ul {
+              padding: 0;
+              margin: 0;
 
-          {props.posts
-            .filter((i, index) => (index < 25))
-            .map((el) => (
-            <li style={listStyle} key={el.id}>
-              <a>{el.title}</a>
-              <span>By: User {el.userId}</span>
-            </li>
-          ))}
+            }
+            ul ul {
+              width: 100%;
+              display:flex;
+              flex-direction: row;
+              overflow-y: hidden;
+              //overflow-y: scroll; /* Must be 'scroll' not 'auto' */
+              -webkit-overflow-scrolling: touch;
+              margin 0 0 10px 0;
+            }
+
+            h4 {
+              margin: 15px 5px 5px;
+              font-size: 1em;
+            }
+            h5 {
+              margin: 15px 5px 5px;
+              font-size: .7em;
+            }
+
+
+          `}</style>
+          <h4>Whats going on in BCN</h4>
+
+          <h5>Music</h5>
+          <ul>
+            {props.posts
+              .filter((i, index) => (index < 13 && i.userId === 2))
+              .map((el) => (
+                  <Card key={el.id} title={el.title} userId={el.userId} id={el.id} />
+            ))}
+          </ul>
+
+          <h5>Food</h5>
+          <ul>
+            {props.posts
+              .filter((i, index) => (index < 3 && i.userId === 1))
+              .map((el) => (
+                <Card key={el.id} title={el.title} userId={el.userId} id={el.id} />
+            ))}
+          </ul>
+
+          <h5>Events</h5>
+          <ul>
+            {props.posts
+              .filter((i, index) => (index < 23 && i.userId === 3))
+              .map((el) => (
+                <Card key={el.id} title={el.title} userId={el.userId} id={el.id} />
+            ))}
+          </ul>
+
         </ul>
       </Layout>
     )

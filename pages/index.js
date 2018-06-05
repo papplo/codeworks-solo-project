@@ -3,10 +3,10 @@ import MockDigest from "../pages/mockdata";
 
 
 export default () => (
-  <div>
+  <div className="root">
     <Layout title="Welkome to tellUs">
       <h1>Welcome to tellUs! 🌎</h1>
-    </Layout>
 
+    </Layout>
   </div>
 )
