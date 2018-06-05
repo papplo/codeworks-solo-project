@@ -16,6 +16,9 @@
     "build": "next build",
     "start": "next start"
   },
+  "now": {
+    "alias": "csp"
+  },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/papplo/codeworks-solo-project.git"
