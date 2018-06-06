@@ -11,6 +11,11 @@ Where i attend in the April 2018-batch, this is our first soloproject where we g
 ___
 
 ## Developers log
+June 6, 2018: Swedish National Day, part 2
+- Initial run of mern seems to be quite extensive, dockerfile for deployment seems cool to investigate, but at this point need to get more into react/redux to find out what dependencies and modules i need to build out mvp-features.
+- swithcing to branch ```craete-react-app``` together with redux and scss as main modules.
+
+
 June 6, 2018: Swedish National Day
 - Create new Branch: ```boilerplate-mern-io```
 - Scaffold project with MERN.IO stack, with simple cli-style scaffolding tool.
