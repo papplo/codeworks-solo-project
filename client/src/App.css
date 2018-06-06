@@ -1,5 +1,6 @@
 .App {
-  text-align: center;
+  margin: 0;
+  padding: 0;
 }
 
 .App-logo {
@@ -9,20 +10,42 @@
 
 .App-header {
   background-color: #222;
-  height: 150px;
-  padding: 20px;
+  height: 40px;
+  padding: 0px;
+  margin: 0;
   color: white;
+  box-sizing: border-box;
 }
 
 .App-title {
-  font-size: 1.5em;
+  font-size: .8em;
+  text-align: center;
 }
 
 .App-intro {
   font-size: large;
 }
 
-@keyframes App-logo-spin {
-  from { transform: rotate(0deg); }
-  to { transform: rotate(360deg); }
+h1,h2,h3,h4 {
+  color: #222;
+  font-weight: 300;
+}
+
+img {
+  width: calc(100% - 5px);
+}
+
+section {
+  padding: 20px;
+  box-sizing: border-box;
+  width: 100%;
+}
+
+@media only screen and (min-width:768px) {
+  section {
+    margin-left: auto;
+    margin-right: auto;
+    width: 692px;
+    border-bottom: 1px solid #DEDEDE;
+  }
 }
