@@ -11,9 +11,18 @@ Where i attend in the April 2018-batch, this is our first soloproject where we g
 ___
 
 ## Developers log
-June 5, 2018: Initialize soloproject
-```git init, npm init, git commit 'first'!```
+June 6, 2018: Swedish National Day
+- Create new Branch: ```boilerplate-mern-io```
+- Scaffold project with MERN.IO stack, with simple cli-style scaffolding tool.
 
+June 5, 2018: Scaffold with Next.js
+- Create New Branch: ```boilerplate-with-nextJs```
+- Scaffold project with Next.js, evaluate product shipping time with this framework.
+- Evaluate future development on this framework.
+- Created simple app with fetching and some routes and css to check code similarity with react. Product deployed to ```now``` with alias [csp.now.sh](https://csp.now.sh).
 
 June 5, 2018: Branching strategy
 I'm creating a test branch ```boilerplate-with-nextjs``` to see what the [Next.js](https://nextjs.org/learn) is all about.
+
+June 5, 2018: Initialize soloproject
+```git init, npm init, git commit 'first'!```
