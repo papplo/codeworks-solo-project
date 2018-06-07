@@ -1,13 +1,12 @@
 import React from 'react';
-import './style.css';
 
 export const DigestPostSingle = (props) => {
   const { post } = props;
   return (
     <li className="single">
-      {post.ID}
-      {post.Title}
-      {post.DueDate}
+      <span>{post.ID}</span>
+      <h3>{post.Title}</h3>
+      <pre>{post.DueDate.slice(0, 10)}</pre>
     </li>
   );
 }

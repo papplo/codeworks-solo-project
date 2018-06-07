@@ -1,10 +1,10 @@
 import React from 'react';
 import {DigestPostSingle} from './DigestPostSingle';
+import './style.css';
 
 
 const DigestPostList = (props) => {
   const { posts } = props;
-  console.log('Posts here: ', posts);
 
   const someposts = (query) => {
     return posts
@@ -20,9 +20,10 @@ const DigestPostList = (props) => {
   }
 
   return (
-    <section>
-      <ul className="">{someposts('true')}</ul>
-      {someposts('false')}
+    <section className="digest-posts">
+      <ul className="music">{ someposts('true') }</ul>
+      <ul className="party">{ someposts('true') }</ul>
+      <ul className="beers">{ someposts('true') }</ul>
     </section>
   );
 }

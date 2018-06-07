@@ -1,6 +1,6 @@
 import React from 'react';
 
-import DigestPostList from './DigestPostList';
+import DigestPostList from '../components/Digest/DigestPostList';
 
 class Digest extends React.Component {
   constructor (props) {

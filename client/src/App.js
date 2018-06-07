@@ -5,15 +5,15 @@ import { BrowserRouter as Router, Route, Switch, Redirect } from 'react-router-d
 /* Redux props and dispatches go here */
 import { actionSimple } from './actions/action.simple';
 
-/* Router components for views */
-//import { PrivacyView }  from './components/PrivacyView.js';
+/* Router containers for views */
+import Digest from './containers/Digest.js';
+
 import { Onboarding }  from './components/Onboarding.js';
 import { Signup }  from './components/Signup.js';
 import { Account }  from './components/Account.js';
-import Digest  from './components/Digest.js';
 
 /* page components */
-import { Header }  from './components/Header.js';
+import { Header }  from './components/Header/Header.js';
 
 
 import './App.css';
