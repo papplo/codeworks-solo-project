@@ -1,10 +1,17 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-import { Helmet } from 'react-helmet';
+import { BrowserRouter as Router, Route, Switch, Redirect } from 'react-router-dom';
 
 import { actionSimple } from './actions/action.simple';
 
-import { PrivacyView }  from './components/PrivacyView.js';
+/* Router components for views */
+//import { PrivacyView }  from './components/PrivacyView.js';
+import { Onboarding }  from './components/Onboarding.js';
+import { Signup }  from './components/Signup.js';
+import { Account }  from './components/Account.js';
+import { Digest }  from './components/Digest.js';
+
+/* page components */
 import { Header }  from './components/Header.js';
 
 
@@ -18,19 +25,19 @@ class App extends Component {
 
   render() {
     return (
-      <div>
-        
-      <Helmet>
-        <title>React App in Title</title>
-        <meta name="viewport" content="width=device-width, initial-scale=1" />
-      </Helmet>
+      <Router>
+        <div className="App">
 
-      <div className="App">
-        <Header />
-        <PrivacyView onClick={this.buttonClicked}/>
-      </div>
-
-    </div>
+          <Header />
+          <Switch>
+            <Route exact path="/" component={Onboarding}/>
+            <Route path="/signup" component={Signup}/>
+            <Route path="/account" component={Account}/>
+            <Route path="/digest" component={Digest}/>
+            <Redirect to="/" />
+          </Switch>
+        </div>
+      </Router>
 
     );
   }
