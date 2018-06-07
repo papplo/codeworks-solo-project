@@ -21,13 +21,14 @@ const DigestPostList = (props) => {
   }
 
   return (
-
-
-    <section className="digest-posts">
-      <ul className="music">{ someposts('true') }</ul>
-      <ul className="party">{ someposts('true') }</ul>
-      <ul className="beers">{ someposts('true') }</ul>
-  </section>
+    <div>
+        <h2>Happening in Barcelona</h2>
+      <section className="digest-posts">
+        <ul className="music">{ someposts('true') }</ul>
+        <ul className="party">{ someposts('true') }</ul>
+        <ul className="beers">{ someposts('true') }</ul>
+      </section>
+    </div>
 
   );
 }

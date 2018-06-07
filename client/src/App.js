@@ -8,7 +8,7 @@ import { actionSimple } from './actions/action.simple';
 /* Router containers for views */
 import Digest from './containers/Digest.js';
 
-import { Onboarding }  from './components/Onboarding.js';
+import { Onboarding }  from './components/Onboarding/Onboarding.js';
 import { Signup }  from './components/Signup.js';
 import { Account }  from './components/Account.js';
 

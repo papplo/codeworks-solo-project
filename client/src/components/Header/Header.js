@@ -10,8 +10,8 @@ export const Header = (props) => {
   return (
     <header className="App-header menu">
       <ul>
-        <li> <Link to="/"><span role="img" aria-label="logo">🌎</span></Link></li>
-        <li> <Link to="/digest">Explore</Link></li>
+        <li> <Link to="/">Tellus</Link></li>
+        <li> <Link to="/digest"><span role="img" aria-label="logo">🌎</span> Barcelona</Link></li>
         <li>
           <Link to="/account">
             <Button>Login</Button>
