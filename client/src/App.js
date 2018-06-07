@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { BrowserRouter as Router, Route, Switch, Redirect } from 'react-router-dom';
-import { TransitionGroup, CSSTransition } from "react-transition-group";
 
 /* Redux props and dispatches go here */
 import { actionSimple } from './actions/action.simple';
@@ -11,7 +10,7 @@ import { actionSimple } from './actions/action.simple';
 import { Onboarding }  from './components/Onboarding.js';
 import { Signup }  from './components/Signup.js';
 import { Account }  from './components/Account.js';
-import { Digest }  from './components/Digest.js';
+import Digest  from './components/Digest.js';
 
 /* page components */
 import { Header }  from './components/Header.js';
