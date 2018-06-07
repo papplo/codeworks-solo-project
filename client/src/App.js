@@ -1,7 +1,9 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { BrowserRouter as Router, Route, Switch, Redirect } from 'react-router-dom';
+import { TransitionGroup, CSSTransition } from "react-transition-group";
 
+/* Redux props and dispatches go here */
 import { actionSimple } from './actions/action.simple';
 
 /* Router components for views */
