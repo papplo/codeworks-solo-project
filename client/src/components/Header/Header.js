@@ -14,7 +14,7 @@ export const Header = (props) => {
         <li> <Link to="/digest"><span role="img" aria-label="logo">🌎</span> Barcelona</Link></li>
         <li>
           <Link to="/account">
-            <Button>Login</Button>
+            <Button color="#8BB48F">Login</Button>
           </Link>
         </li>
 
