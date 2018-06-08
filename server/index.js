@@ -1,3 +1,3 @@
-const server = require('./src/lib/server');
+const server = require('./src/server');
 console.log(server);
 server.start();
