@@ -16,11 +16,37 @@ section.digest-posts {
 .digest-posts ul li {
   background: #ccc;
   height: 145px;
-  width: 200px;
-  padding: 20px;
+  padding: 5px 20px 10px;
   border-radius: 5px;
   margin-right: 15px;
+  display: inline-flex;
 }
+
+.digest-posts ul li.single .heading {
+  width: 70vw;
+  max-width: 350px;
+}
+
+.digest-posts ul li.single p.small {
+  margin: 1em 0 0;
+  font-size: .7em;
+  text-transform: uppercase;
+}
+
+.digest-posts ul li.single h4 {
+  margin: .5em 0;
+}
+
+
+.digest-posts ul li.single img.single.thumb {
+  width: 50px;
+  float: right;
+}
+
+
+
+
+
 
 
 .digest-posts ul.party {

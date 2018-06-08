@@ -13,7 +13,7 @@ const DigestPostList = (props) => {
       .map(
         (el) => (
           <DigestPostSingle
-            key={el.ID}
+            key={el.id}
             post={el}
             query={query} />
         )
