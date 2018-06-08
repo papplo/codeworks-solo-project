@@ -17,9 +17,8 @@ const createUser = (req, res) => {
     }
   else {
     console.log('Prob Somethings wrong');
-    res.sendStatus(404)
+    res.status(500).send({ error: "Something is missing in your post!" });
     res.end()
-
   }
 }
 
