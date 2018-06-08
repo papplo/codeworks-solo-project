@@ -1,5 +1,5 @@
 import React from 'react';
-
+import Button from "../components-styled/buttons/Button";
 export default class Geolocation extends React.Component {
 
   constructor(props){
@@ -53,10 +53,17 @@ export default class Geolocation extends React.Component {
   render() {
     return (
       <div>
-        <a href="#" onClick={() => this.findGeoLocation()}>Show my Location</a>
+
+        <div>
+          <Button color='#8BB48F' size onClick={() => this.findGeoLocation()} >
+            {this.props.value}
+          </Button>
+
+          <br /><span>{this.props.cta}</span>
+        </div>
 
         <p id="mapref">
-          {this.state.position ? this.state.latlong : 'Searching...'}
+          {this.state.position ? this.state.latlong : ''}
         </p>
       </div>
     );

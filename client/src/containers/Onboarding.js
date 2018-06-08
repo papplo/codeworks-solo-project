@@ -1,11 +1,18 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
-
 import Geolocation from './Geolocation';
+
 import { OnboardingForm } from '../components/Onboarding/OnboardingForm';
 
-export const Onboarding = (props) => {
-  console.log('Onboarding Props: ', this.props);
+
+const onboardingStyle = {
+
+}
+
+const Onboarding = (props) => {
+
+
+
+
   return (
 
   <div>
@@ -14,13 +21,14 @@ export const Onboarding = (props) => {
       <p>
         Tellus crawls the net to discover events and happenings that are based on your location. Events can be added by anyone; users, companies and organisations.
       </p>
-
-      <Geolocation />
+      <div style={{ textAlign: 'center', margin: 20}} >
+        <Geolocation value="Get Going Today" cta="Sign up to create and share"/>
+      </div>
       <OnboardingForm position={props.position}/>
-      <p>
-        <Link to="/signup">Create an Account and get started!</Link>
-      </p>
+
     </section>
   </div>
   );
 }
+
+export default Onboarding
