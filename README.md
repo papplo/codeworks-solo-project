@@ -11,14 +11,13 @@ Where i attend in the April 2018-batch, this is our first soloproject where we g
 ___
 
 ## Developers log
+
 June 7, 2018: Choosing a Route with the help from react-router
 - now consolidating my idea of creating a pwa with url's and dynamic content, offline-capabilities and more, i declare my devpath to be a react app with router for all views, mostly to be able to grok all problems that will arise.
 
-
 June 6, 2018: Swedish National Day, part 2
 - Initial run of mern seems to be quite extensive, dockerfile for deployment seems cool to investigate, but at this point need to get more into react/redux to find out what dependencies and modules i need to build out mvp-features.
-- swithcing to branch ```craete-react-app``` together with redux and scss as main modules.
-
+- swithcing to branch ```create-react-app``` together with redux and scss as main modules.
 
 June 6, 2018: Swedish National Day
 - Create new Branch: ```boilerplate-mern-io```
