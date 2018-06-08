@@ -50,11 +50,21 @@ const createNode = (req, res) => {
 }
 
 const getNodes = (req, res) => {
+  const limit = (req.params.limit ? req.params.limit : 25);
+  const skip = (req.params.skip ? req.params.skip : 0);
+  console.log('length:',limit,'skipped:',skip);
 
+  TellusNode.find()
+  .sort({'published_at': -1})
+  .skip(parseInt(skip, 10))
+  .limit(parseInt(limit, 10))
+  .then((nodeList) => res.json(nodeList))
 }
 
 const getOneNode = (req, res) => {
-
+  console.log(req.params.id);
+  TellusNode.find({_id : req.params.id})
+  .then((node) => res.json(node))
 }
 
 module.exports = {

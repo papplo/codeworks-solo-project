@@ -14,8 +14,11 @@ router
   .get('/users/',     (req, res) => getUsers(req, res))
   .get('/user/:id',   (req, res) => getOneUser(req, res))
   .post('/nodes/',    (req, res) => createNode(req, res))
+
   .get('/nodes/',     (req, res) => getNodes(req, res))
-  .get('/nodes/:id',  (req, res) => getOneUser(req, res))
+  .get('/nodes/:limit.:skip',     (req, res) => getNodes(req, res))
+
+  .get('/node/:id',  (req, res) => getOneNode(req, res))
   .all('/',           (req, res) => {
     console.log('Echo 404 on catch-all');
     return res.sendStatus(404);});
