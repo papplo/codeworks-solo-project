@@ -1,8 +1,8 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 
-import Geolocation from '../../containers/Geolocation';
-import {OnboardingForm} from './OnboardingForm';
+import Geolocation from './Geolocation';
+import { OnboardingForm } from '../components/Onboarding/OnboardingForm';
 
 export const Onboarding = (props) => {
   console.log('Onboarding Props: ', this.props);
