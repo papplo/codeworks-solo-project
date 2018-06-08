@@ -12,7 +12,7 @@ const { createNode, getNodes, getOneNode } = nodesController;
 router
   .post('/users/',    (req, res) => createUser(req, res))
   .get('/users/',     (req, res) => getUsers(req, res))
-  .get('/users/:id',  (req, res) => getOneUser(req, res))
+  .get('/user/:id',   (req, res) => getOneUser(req, res))
   .post('/nodes/',    (req, res) => createUser(req, res))
   .get('/nodes/',     (req, res) => getUsers(req, res))
   .get('/nodes/:id',  (req, res) => getOneUser(req, res))
