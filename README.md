@@ -12,6 +12,9 @@ ___
 
 ## Developers log
 
+June 8, 2018: Merging into Master
+- Just decided to merge branch into Master, now going forward with real data, backend and further styling for a complete 'read-only' app.
+
 June 7, 2018: Choosing a Route with the help from react-router
 - now consolidating my idea of creating a pwa with url's and dynamic content, offline-capabilities and more, i declare my devpath to be a react app with router for all views, mostly to be able to grok all problems that will arise.
 
