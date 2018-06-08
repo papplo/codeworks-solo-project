@@ -32,6 +32,7 @@ const createNode = (req, res) => {
       title,
       title_url,
       node_type,
+      'node_type.name_url' : cleanUrl(node_type.name),
       tag,
       poster_path,
       backdrop_path,
