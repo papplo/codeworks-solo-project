@@ -12,7 +12,7 @@ class Digest extends React.Component {
   }
 
   componentDidMount() {
-    console.log(this ,' did mount.');
+    console.log('DigestContainer did mount.');
   }
 
   callApi() {
@@ -25,7 +25,6 @@ class Digest extends React.Component {
   }
 
   render() {
-    console.log(mockdata);
     return (
       <DigestPostList
         posts={this.posts}
