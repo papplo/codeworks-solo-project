@@ -7,6 +7,7 @@ import { actionSimple } from './actions/action.simple';
 
 /* Router containers for views */
 import Digest from './containers/Digest.js';
+import { DigestPostSingle } from './components/Digest/DigestPostSingle';
 
 import { Onboarding }  from './components/Onboarding/Onboarding.js';
 import { Signup }  from './components/Signup.js';
@@ -35,6 +36,7 @@ class App extends Component {
             <Route path="/signup" component={Signup}/>
             <Route path="/account" component={Account}/>
             <Route path="/digest" component={Digest}/>
+            <Route path="/digest/p/:title" component={DigestPostSingle}/>
             <Redirect to="/" />
           </Switch>
         </div>
