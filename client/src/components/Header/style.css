@@ -1,0 +1,26 @@
+
+.menu ul {
+  background-color: #222;
+  margin: 0;
+  padding: 10px 0 15px;
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+  justify-content: space-between;
+}
+
+.menu li {
+  margin: 0 10px 0 20px;
+  align-self: center;
+}
+
+.menu li a {
+  text-decoration: none;
+  color: #fff;
+  display: block;
+  border-bottom: 0;
+  display: inline-block;
+  -webkit-tap-highlight-color: rgba(255,255,255,0.2);
+  tap-highlight-color: rgba(255,255,255,0.2);
+  outline: 0;
+}
