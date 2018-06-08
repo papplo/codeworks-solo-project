@@ -3,14 +3,14 @@ import { connect } from 'react-redux';
 import { BrowserRouter as Router, Route, Switch, Redirect } from 'react-router-dom';
 
 /* Redux props and dispatches go here */
-import { actionSimple } from './actions/action.simple';
+import { actionSimple } from './actions/actions';
 
 /* Router containers for views */
 import Digest from './containers/Digest.js';
-import { DigestPostSolo } from './components/Digest/DigestPostSolo';
+import Onboarding  from './containers/Onboarding.js';
 
-import { Onboarding }  from './containers/Onboarding.js';
-import { Signup }  from './components/Signup.js';
+  import { DigestPostSolo } from './components/Digest/DigestPostSolo';
+
 import { Account }  from './components/Account.js';
 
 /* page components */
@@ -33,7 +33,6 @@ class App extends Component {
           <Header />
           <Switch>
             <Route exact path="/" component={Onboarding}/>
-            <Route path="/signup" component={Signup}/>
             <Route path="/account" component={Account}/>
             <Route path="/digest/:tag/:title/:id" component={DigestPostSolo}/>
             <Route path="/digest" component={Digest}/>
