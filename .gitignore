@@ -2,3 +2,4 @@ node_modules
 .next
 server/db
 server/.env
+tmp
