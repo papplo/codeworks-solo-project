@@ -5,8 +5,11 @@ const cors = require('cors');
 const express = require('express');
 const mongoose = require('mongoose');
 const bodyParser = require('body-parser');
+const cookieParser = require('cookie-parser');
+
 const dotenv = require('dotenv');
 const router = require('./route/auth-router');
+
 const app = express();
 
 /* middleware here */
@@ -25,6 +28,7 @@ mongoose.connect(MONGODB_URI);
 /* Here we go */
 app.use(cors(corsOptions));
 app.use(bodyParser.json());
+app.use(cookieParser());
 app.use('/', router);
 
 const start = () => {

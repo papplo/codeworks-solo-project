@@ -18,10 +18,10 @@ const createUser = async (req, res) => {
   if (username && password && email) {
 
     // check if name exists
-    const check = await TellusUser.findOne({'username': username});
+    const check = await TellusUser.findOne({'username': username})
     if (check) {
       console.log(req.body, ' <- Request.body. ERR USER Exists');
-      res.status(400).send({ error: "User already exists!" });
+      res.status(400).send({ error: "User or E-mail already exists!" });
       res.end()
     }
 
@@ -39,6 +39,7 @@ const createUser = async (req, res) => {
     user.save()
       .then(event => res.json(event))
       .then(countUsers())
+      .then(res.cookie('TellusUser', user.tokenSeed))
       .catch(e => console.log(e));
     }
   else {
@@ -57,17 +58,47 @@ const getUsers = (req, res) => {
     ));
 }
 
-const getOneUser = (req, res) => {
-  TellusUser.findOne({'tokenSeed': req.params.id})
-    .then(user => res.json(user))
-    .catch((e) => (
-      res.status(500).send(body)
-    ));
+const loginUser = async (req, res) => {
+  console.log('Accessing Basic login at /loginUser');
+  const login = await TellusUser.findOne({'username': req.body.username})
+
+    if (login) {
+    console.log(' UserName Exists: now authenticate it!');
+
+    // bcrypt here! --_>___-<___>->->->->_->
+
+      res.status(400).send({ username: login.username });
+      res.end()
+    }
+
 }
 
+const authenticate = async (req, res, next) => {
+  console.log('Accessing authenticate: /user/');
+
+  // get cookie from Request
+  const sessionAuthCookie = req.cookies.TellusUser;
+  if (sessionAuthCookie != undefined) {
+    console.log('token: ',  sessionAuthCookie);
+
+    const user = await TellusUser.findOne({'tokenSeed': sessionAuthCookie});
+    if (user) {
+      res.status(206).json({ success: {'message' : 'You were authenticated with a cookie' , 'username' : user.username} });
+      res.end()
+    } else {
+      console.log('cookie failed');
+      next()
+    }
+  }
+  else {
+    console.log(req.cookies, ' <- Request.cookies. Missing Token, forwarding to loginUser');
+    next()
+  }
+}
 
 module.exports = {
   createUser,
   getUsers,
-  getOneUser
+  loginUser,
+  authenticate
 }
