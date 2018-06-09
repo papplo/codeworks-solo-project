@@ -60,14 +60,20 @@ const getUsers = (req, res) => {
 
 const loginUser = async (req, res) => {
   console.log('Accessing Basic login at /loginUser');
-  const login = await TellusUser.findOne({'username': req.body.username})
+  const match = await TellusUser.findOne({'username': req.body.username});
+    if (match) {
+      console.log(' UserName Exists: now authenticating');
+      await bcrypt.compare(req.body.password, match.passwordHash)
+        .then(() => res.cookie('TellusUser', match.tokenSeed))
+        .then(console.log('match'));
 
-    if (login) {
-    console.log(' UserName Exists: now authenticate it!');
-
-    // bcrypt here! --_>___-<___>->->->->_->
-
-      res.status(400).send({ username: login.username });
+      console.log('passwords match db records')
+      res.status(400).json({ success: {'message' : 'You were authenticated Basic Auth' , 'username' : match.username} })
+      res.end()
+    }
+    else {
+      console.log(req.body, ' <- Request.body. Prob Somethings wrong');
+      res.status(400).send({ error: "This username does not exist" });
       res.end()
     }
 
