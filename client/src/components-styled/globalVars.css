@@ -1,0 +1,8 @@
+/* Define a variable at the top level of the cascade */
+:root {
+  --theme-primary-color: #8BB48F;
+}
+/* You can use this variable throughout your styles */
+.header {
+  background: var(--theme-primary-color);
+}

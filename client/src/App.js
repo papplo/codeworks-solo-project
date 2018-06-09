@@ -8,10 +8,10 @@ import { actionSimple } from './actions/actions';
 /* Router containers for views */
 import Digest from './containers/Digest.js';
 import Onboarding  from './containers/Onboarding.js';
+import LoginSignup from './containers/LoginSignup.js';
 
   import { DigestPostSolo } from './components/Digest/DigestPostSolo';
 
-import { Account }  from './components/Account.js';
 
 /* page components */
 import { Header }  from './components/Header/Header.js';
@@ -33,7 +33,7 @@ class App extends Component {
           <Header />
           <Switch>
             <Route exact path="/" component={Onboarding}/>
-            <Route path="/account" component={Account}/>
+            <Route path="/account" component={LoginSignup}/>
             <Route path="/digest/:tag/:title/:id" component={DigestPostSolo}/>
             <Route path="/digest" component={Digest}/>
             <Redirect to="/" />
