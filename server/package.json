@@ -21,9 +21,9 @@
     "dotenv": "^6.0.0",
     "express": "^4.16.3",
     "http-errors": "^1.6.3",
-    "jsonwebtoken": "^8.2.2",
     "mongoose": "^5.1.4",
-    "superagent": "^3.8.3"
+    "superagent": "^3.8.3",
+    "uuid": "^3.2.1"
   },
   "devDependencies": {
     "eslint": "^4.19.1",

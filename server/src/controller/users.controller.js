@@ -1,8 +1,8 @@
 // C R /U /D : All but working example, time to commit it!
 const TellusUser = require('../model/user');
 
-const jwt = require('jsonwebtoken');
-
+// Handling new users with hashes and tokens
+const uuidv4 = require('uuid/v4');
 const bcrypt = require('bcrypt');
 const saltRd = 10;
 
@@ -25,27 +25,25 @@ const createUser = async (req, res) => {
       res.end()
     }
 
-
     // pseudo: create passwordHash
     let hash = '';
     await bcrypt.hash(password, saltRd).then((h) => (hash = h));
-    // store as object and pass to model
-    // create token
 
+    // store as object and pass to model
     const user = new TellusUser({
       'passwordHash': hash,
       'email'       : email,
       'username'    : username,
-      'tokenSeed'   : ' ',
+      'tokenSeed'   : uuidv4(),
     })
     user.save()
       .then(event => res.json(event))
       .then(countUsers())
-      .catch(e => console.log(e))
+      .catch(e => console.log(e));
     }
   else {
     console.log(req.body, ' <- Request.body. Prob Somethings wrong');
-    res.status(500).send({ error: "Something is missing in your post!" });
+    res.status(400).send({ error: "Something is missing in your post!" });
     res.end()
   }
 }
@@ -55,7 +53,7 @@ const getUsers = (req, res) => {
     .then(users => res.json(
       users.map(user => user.username)))
     .catch((e) => (
-      res.status(500).send('Somethings wrong with the world today!', { error: e })
+      res.status(400).send('Somethings wrong with the world today!', { error: e })
     ));
 }
 
