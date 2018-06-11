@@ -12,8 +12,9 @@ export default class LoginSignup extends React.Component {
 
       server_message: '',
       server_error: false,
-      in_view : this.props.in_view || 'login',
+      in_view : props.in_view || 'signup',
       }
+    console.log(this.props.in_view);
     this.apiUserAuth = 'http://localhost:4000/user';
     this.apiUserNew = 'http://localhost:4000/users';
   }
@@ -35,6 +36,7 @@ export default class LoginSignup extends React.Component {
 
   async handleSubmit(event) {
     event.preventDefault();
+
     let ApiRoute
     if (event.target.id === 'login') {
       console.log('login');
@@ -65,7 +67,9 @@ export default class LoginSignup extends React.Component {
       //   'logged_in' : {email: res.email, tokenSeed: res.tokenSeed}
       // }
       // ))
-      .then(res => this.props.onComplete(this.state.logged_in))
+      .then(res => this.props.onComplete(this.state.logged_in));
+
+      console.log('signed up');
   }
 
   renderLogin() {
@@ -96,7 +100,7 @@ export default class LoginSignup extends React.Component {
   }
 
   render() {
-    let inView = 'login here';
+    let inView;
     if (this.state.in_view === 'login') {
       inView = this.renderLogin()
     } else if (this.state.in_view === 'signup') {

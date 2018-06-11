@@ -11,14 +11,14 @@ return (
   <div id="nodeForm">
     <section className="node-form is-centered">
       <form
-      // onChange = {(e,value) => props.onChange(e, value)}
+       onChange = {(e,value) => props.onChange(e, value)}
       >
         <label><span>Share something!</span></label>
         <Input
-          id="node-title"
+          id="node_title"
           placeholder="Whats up?" />
         <Textarea
-          id="node-overview"
+          id="node_overview"
           placeholder="Write something..."
           rows="6">
         </Textarea>

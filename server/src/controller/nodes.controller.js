@@ -31,12 +31,13 @@ const createNode = (req, res) => {
     const
       created_at = new Date(),
       title_url = cleanUrl(title);
+      node_type_name = cleanUrl(node_type);
 
     const node = new TellusNode({
       title,
       title_url,
       node_type,
-      'node_type.name_url' : cleanUrl(node_type.name),
+      node_type_name,
       tag,
       geolocation,
       poster_path,
@@ -45,13 +46,14 @@ const createNode = (req, res) => {
       overview,
       created_by
       })
+      console.log(node);
       node.save()
-        .then(tellusNode => res.json(tellusNode))
-        .then(() => {res.status(201); console.log('Created: ', title)})
+        .then(tellusNode => res.json({'message': tellusNode}))
+        //.then(() => {res.status(201); console.log('Created: ', title)})
         .catch(e => console.log(e))
       }
       else {
-        res.status(500).send({ message : { fault: 'missing fields in posts'}, error: "Something is missing in your post!" });
+        res.status(500).send({ message : { fault: 'missing fields in posts' }, error: "Something is missing in your post!" });
       }
 }
 
@@ -61,7 +63,7 @@ const getNodes = (req, res) => {
   console.log('length:',limit,'skipped:',skip);
 
   TellusNode.find()
-  .sort({'published_at': -1})
+  .sort({'_id': -1})
   .skip(parseInt(skip, 10))
   .limit(parseInt(limit, 10))
   .then((nodeList) => res.json(nodeList))

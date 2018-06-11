@@ -42,9 +42,13 @@ class App extends Component {
       console.log('no user');
     }
   }
-  buttonClicked = (event) => {
-    this.props.actionSimple();
-  }
+
+  signupHandler(data) {
+    console.log('Storing passed props from form: ', data)
+    this.setState({'TellusUser': JSON.stringify(data)})
+    localStorage.setItem('TellusUser', JSON.stringify(data));
+  };
+
 
   render() {
     return (
@@ -55,14 +59,21 @@ class App extends Component {
             TellusUser={this.state.TellusUser}/>
           <Switch>
             <Route exact path="/" TellusUser={this.state.TellusUser} component={Onboarding}/>
+
             <Route path="/account"
-            component={LoginSignup}/>
+            in_view="signup"
+            render={() =>
+              <LoginSignup
+                fromRoute='true'
+                logged_in=''
+                onComplete={(data) => this.signupHandler(data)}/>
+              }/>
             <Route path="/digest/:tag/:title/:id" component={DigestPostSolo}/>
             <Route path="/digest"
             component={Digest}/>
             <Redirect to="/" />
           </Switch>
-          <NodeCreate />
+          <NodeCreate TellusUser={this.state.TellusUser}/>
         </div>
       </Router>
 

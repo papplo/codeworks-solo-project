@@ -5,6 +5,7 @@ import Button from '../../components-styled/buttons/Button';
 
 
 export const SignupForm = (props) => {
+  console.log(props.state);
 return (
   <div>
     <section className="login-form signup-form is-centered">

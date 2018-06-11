@@ -3,12 +3,9 @@ const mongoose = require('mongoose');
 const nodeSchema = mongoose.Schema({
   title:              { type: String },
   title_url:          { type: String },
-  node_type:          {
-    name: String,
-    name_url: String,
-    id: Number,
-    custom: Boolean
-  },
+  node_type:          { type: String },
+  node_type_name:     { type: String },
+
   tag:                [
     { name: { type: String },
       id: {type: Number },

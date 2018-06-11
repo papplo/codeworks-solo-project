@@ -2,6 +2,7 @@ import React from 'react';
 import Geolocation from './Geolocation';
 import { Link } from 'react-router-dom';
 import '../components/Onboarding/style.css';
+import Button from '../components-styled/buttons/Button';
 
 import { OnboardingForm } from '../components/Onboarding/OnboardingForm';
 import LoginSignup from './LoginSignup';
@@ -16,10 +17,6 @@ export default class Onboarding extends React.Component {
       TellusUser : JSON.parse(localStorage.getItem('TellusUser')) || '',
     }
   }
-  signupHandler(data) {
-    console.log('Storing passed props from form: ', data)
-    localStorage.setItem('TellusUser', JSON.stringify(data));
-  };
 
   render() {
     return (
@@ -34,12 +31,9 @@ export default class Onboarding extends React.Component {
       </section>
 
       <section className="login-form is-centered">
-        {!this.state.TellusUser.username?
-            <LoginSignup in_view='signup' onComplete={(data) => this.signupHandler(data)}/>
-            :
-            <OnboardingForm user={this.state.TellusUser}/>
-          }
-
+        <Link to="/account" in_view="signup">
+          <Button round="true" color="black" size="true">signup</Button>
+        </Link>
       </section>
 
     </div>
