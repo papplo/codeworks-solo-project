@@ -1,16 +1,13 @@
 import React from 'react';
 import Button from "../components-styled/buttons/Button";
-export default class Geolocation extends React.Component {
 
+
+
+export default class Geolocation extends React.Component {
   constructor(props){
     super(props)
     this.output = document.getElementById('mapref');
-    this.state = {
-      position: null,
-      latitude: '',
-      longitude: '',
-      latlong: ''
-    }
+
   }
 
   findGeoLocation = () => {
@@ -26,7 +23,7 @@ export default class Geolocation extends React.Component {
       const latlong = `${latitude} : ${longitude}`
       console.log(`You are at: ${latitude}, ${longitude}`);
 
-      this.setState({
+      this.props.setState({
         position: true,
         latitude: latitude,
         longitude: longitude,
@@ -36,7 +33,7 @@ export default class Geolocation extends React.Component {
 
     const error = (error) => {
       console.log('error');
-      this.setState({
+      this.props.setState({
         position: true,
         latitude: 'unknown',
         longitude: 'unknown',
@@ -51,6 +48,7 @@ export default class Geolocation extends React.Component {
 
 
   render() {
+    console.log(this.state);
     return (
       <div>
 
@@ -63,7 +61,7 @@ export default class Geolocation extends React.Component {
         </div>
 
         <p id="mapref">
-          {this.state.position ? this.state.latlong : ''}
+          {this.position? 1: 2}
         </p>
       </div>
     );
