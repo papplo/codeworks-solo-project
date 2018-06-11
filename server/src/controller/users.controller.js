@@ -59,21 +59,30 @@ const getUsers = (req, res) => {
 }
 
 const loginUser = async (req, res) => {
-  console.log('Accessing Basic login at /loginUser');
+  console.log(req.body, 'Accessing Basic login at /loginUser');
   const match = await TellusUser.findOne({'username': req.body.username});
     if (match) {
-      console.log(' UserName Exists: now authenticating');
-      await bcrypt.compare(req.body.password, match.passwordHash)
-        .then(() => res.cookie('TellusUser', match.tokenSeed))
-        .then(console.log('match'));
-
-      console.log('passwords match db records')
-      res.status(400).json({ success: {'message' : 'You were authenticated Basic Auth' , 'username' : match.username} })
-      res.end()
+      console.log('UserName Exists: now authenticating');
+      await bcrypt.compare(req.body.password, match.passwordHash,
+        (err, result) => {
+          if(result) {
+            console.log('Passwords match db records');
+            res.status(200);
+            res.cookie('TellusUser', match.tokenSeed);
+            res.send({ success: {'message' : 'You were authenticated Basic Auth' , 'username' : match.username} });
+            res.end();
+          } else {
+            console.log('Passwords dont match');
+            res.status(406);
+            res.send({ message: "The password is incorrect", error: 'true'});
+            res.end()
+          }
+      });
     }
     else {
-      console.log(req.body, ' <- Request.body. Prob Somethings wrong');
-      res.status(400).send({ error: "This username does not exist" });
+      console.log(req.body, ' <- Request.body. Probably something is wrong');
+      res.status(406);
+      res.send({ message: "This username does not exist", error: 'true'});
       res.end()
     }
 
@@ -83,6 +92,7 @@ const authenticate = async (req, res, next) => {
   console.log('Accessing authenticate: /user/');
 
   // get cookie from Request
+  console.log(req.body);
   const sessionAuthCookie = req.cookies.TellusUser;
   if (sessionAuthCookie != undefined) {
     console.log('token: ',  sessionAuthCookie);

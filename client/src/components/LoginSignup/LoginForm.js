@@ -13,8 +13,8 @@ return (
       onChange = {(e,value) => props.onChange(e, value)}>
         <label><h3>Login to Tellus</h3></label>
         <Input id="username" placeholder="Username" />
-        <p>{props.server_message? 1 : 2}</p>
         <Input id="password" placeholder="Password" />
+        <p>{props.state.server_error? props.state.server_message : ''}</p>
         <Button
           onClick={props.onSubmit}
           color="var(--theme-primary-color)"

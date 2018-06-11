@@ -4,7 +4,7 @@ import DigestPostList from '../components/Digest/DigestPostList';
 
 import {mockdata} from './DigestMockData';
 
-const apiRouteNodes = 'http://192.168.1.148:4000/nodes/'
+const apiRouteNodes = 'http://localhost:4000/nodes/'
 
 class Digest extends React.Component {
   constructor (props) {

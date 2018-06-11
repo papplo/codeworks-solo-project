@@ -7,44 +7,40 @@ export default class LoginSignup extends React.Component {
     this.state = {
       user_name: '',
       user_password: '',
+      logged_in: 'false',
       server_message: '',
       server_error: false,
       }
   }
 
 
-
   handleTyping(event) {
-    console.log('este',event.target.id,event.target.placeholder,'', event.target.value);
     if (event.target.id === 'username') {
-      console.log('yes');
       this.setState({'user_name' : event.target.value});
-      console.log(this.state.user_name);
-    }
-    else {
-      console.log('pass');
+    } else {
       this.setState({'user_password' : event.target.value});
     }
   }
 
   handleSubmit(event) {
     event.preventDefault();
-    const apiUserAuth = 'http://192.168.1.148:4000/user';
-    console.log('aqui ',this.state.user_name);
+    const apiUserAuth = 'http://localhost:4000/user';
 
     fetch(apiUserAuth, {
       method: 'POST',
       headers: {
        'Accept': 'application/json',
        'Content-Type': 'application/json'
-     },
+      },
       body: JSON.stringify({
         username: this.state.user_name,
         password: this.state.user_password,
       })
-    }).then(res => res.json())
-      .then(res => this.setState({'server_message' : res.message}))
-        //console.log(this.state.server_message)// .then(res => console.log(res))
+    })
+      .then(res => res.json())
+      .then(res => this.setState(
+        {'server_message' : res.message, 'server_error': res.error, 'logged_in' : res.username}
+      ))
   }
 
 
