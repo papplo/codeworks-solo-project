@@ -2,9 +2,9 @@ import React from 'react';
 
 import DigestPostList from '../components/Digest/DigestPostList';
 
-import {mockdata} from './DigestMockData';
+//import {mockdata} from './DigestMockData';
 
-const apiRouteNodes = 'http://localhost:4000/nodes/'
+const apiRouteNodes = 'http://Pablos-MacBook-Pro.local:4000/nodes/'
 
 class Digest extends React.Component {
   constructor (props) {
@@ -16,7 +16,10 @@ class Digest extends React.Component {
 
   componentDidMount() {
     console.log('DigestContainer did mount, fetching: ', apiRouteNodes);
-    fetch(apiRouteNodes)
+    fetch(apiRouteNodes, {
+      method: 'GET',
+      authorization : 'Bearer-Token : 1111'
+    })
     .then(res => res.json())
     .then(res => this.setState({nodes : res}))
   }

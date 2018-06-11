@@ -1,5 +1,4 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
 
 export const DigestPostSolo = (props) => {
   this.state = props.history.location.state || {};
@@ -15,7 +14,10 @@ export const DigestPostSolo = (props) => {
 
 
 
-      <img src={this.staticRoute}  className="single thumb"/>
+      <img
+        src={this.staticRoute}
+        alt=""
+        className="single thumb"/>
     </section>
 
   );

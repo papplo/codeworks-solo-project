@@ -18,14 +18,11 @@ export const DigestPostSingle = (props) => {
           data: {node},
         }
       }}>
-
-
-
         <div className="heading">
-          <p className="small">{node.id} by {node.user_nick} - {node.user_id}</p>
           <img src={node.poster_path} alt={node.title} className="single thumb"/>
+          <p className="small">by {node.created_by} - {node.user_id} <span>{node.created_at.slice(0, 10)}</span></p>
           <h4>{node.title}</h4>
-          <pre>{node.created_at.slice(0, 10)}</pre>
+
         </div>
       </Link>
     </li>
