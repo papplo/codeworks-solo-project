@@ -1,8 +1,8 @@
 const mongoose = require('mongoose');
 
 const nodeSchema = mongoose.Schema({
-  title:              { type: String, required: true },
-  title_url:          { type: String, required: true },
+  title:              { type: String },
+  title_url:          { type: String },
   node_type:          {
     name: String,
     name_url: String,
@@ -15,10 +15,10 @@ const nodeSchema = mongoose.Schema({
       custom: {type: Boolean }
     }
   ],
-  poster_path:        { type: String, required: true },
-  backdrop_path:      { type: String, required: true },
-  short_description:  { type: String, required: true },
-  overview:           { type: String, required: true },
+  poster_path:        { type: String },
+  backdrop_path:      { type: String },
+  short_description:  { type: String },
+  overview:           { type: String },
 
   geolocation:        { type: { type: String }, coordinates: [ ] },
   created_at:         { type: Date, default : () => new Date() },

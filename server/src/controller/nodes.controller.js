@@ -4,14 +4,17 @@ const TellusNode = require('../model/node');
 
 /*url cleaning function please extract from here*/
 const cleanUrl = (str) => {
-  return str
-  .replace(/[^A-Za-z0-9 ]/g,'')
-    .replace(/\s{2,}/g,' ')
-    .replace(/\s/g, "-")
-    .slice(0, 40);
+  if (str) {
+    return str
+    .replace(/[^A-Za-z0-9 ]/g,'')
+      .replace(/\s{2,}/g,' ')
+      .replace(/\s/g, "-")
+      .slice(0, 40);
+  }
 }
 
 const createNode = (req, res) => {
+  console.log(req.body);
   if (req.body.created_by) {
     const {
       title,
@@ -48,7 +51,7 @@ const createNode = (req, res) => {
         .catch(e => console.log(e))
       }
       else {
-        res.status(500).send({ error: "Something is missing in your post!" });
+        res.status(500).send({ message : { fault: 'missing fields in posts'}, error: "Something is missing in your post!" });
       }
 }
 
