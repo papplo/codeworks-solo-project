@@ -1,0 +1,20 @@
+/* Define a variable at the top level of the cascade */
+:root {
+  --theme-primary-color: #92D2DF;
+  --theme-primary-bgcolor: #ffffff;
+
+  --theme-secondary-color: #E38282;
+  --theme-secondary-bgcolor: #ffffff;
+}
+/* You can use this variable throughout your styles */
+.header {
+  background: var(--theme-primary-color);
+}
+
+
+.is-expanded{
+  width: 45vw !important;
+  margin: 0 auto;
+  left: 1em !important;
+  right: 1em !important;
+}

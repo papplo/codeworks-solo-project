@@ -1,0 +1,18 @@
+.onboarding {
+
+}
+
+.onboarding p {
+  font-size: .85em;
+}
+
+.onboarding h1 {
+  font-size: 5em;
+  margin: .5em auto 0 ;
+  line-height: .7em;
+}
+
+.onboarding h2 {
+  font-size: 2em;
+  margin: .2em auto;
+}

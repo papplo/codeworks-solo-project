@@ -48,14 +48,29 @@ h1,h2,h3,h4 {
   font-weight: 300;
 }
 
-img {
+/* img {
   width: calc(100% - 5px);
-}
+} */
 
 section {
   padding: 20px;
   box-sizing: border-box;
   width: 100%;
+}
+
+section.is-centered {
+  text-align: center;
+  margin: 0 auto;
+}
+
+section.is-centered form{
+  display: flex;
+  flex-direction: column;
+}
+
+section section {
+  padding-top:0;
+  padding-bottom: 0;
 }
 
 @media only screen and (min-width:768px) {

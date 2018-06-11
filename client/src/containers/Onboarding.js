@@ -1,34 +1,48 @@
 import React from 'react';
 import Geolocation from './Geolocation';
+import { Link } from 'react-router-dom';
+import '../components/Onboarding/style.css';
 
 import { OnboardingForm } from '../components/Onboarding/OnboardingForm';
+import LoginSignup from './LoginSignup';
 
+export default class Onboarding extends React.Component {
+  constructor (props) {
+    super(props)
 
-const onboardingStyle = {
+    this.state = {
+      position: [0,0],
+      signing_in : false,
+      TellusUser : JSON.parse(localStorage.getItem('TellusUser')) || '',
+    }
+  }
+  signupHandler(data) {
+    console.log('Storing passed props from form: ', data)
+    localStorage.setItem('TellusUser', JSON.stringify(data));
+  };
 
+  render() {
+    return (
+
+    <div>
+      <section className="onboarding is-centered">
+        <h1><span role="img" aria-label="logo">🌎</span></h1>
+        <h2>Welcome to Tellus</h2>
+        <p>
+          Tellus crawls the net to discover events and happenings that are based on your location. Events can be added by anyone; users, companies and organisations.
+        </p>
+      </section>
+
+      <section className="login-form is-centered">
+        {!this.state.TellusUser.username?
+            <LoginSignup in_view='signup' onComplete={(data) => this.signupHandler(data)}/>
+            :
+            <OnboardingForm user={this.state.TellusUser}/>
+          }
+
+      </section>
+
+    </div>
+    );
+  }
 }
-
-const Onboarding = (props) => {
-
-
-
-
-  return (
-
-  <div>
-    <section>
-      <h1>Welcome to Tellus <span role="img" aria-label="logo">🌎</span></h1>
-      <p>
-        Tellus crawls the net to discover events and happenings that are based on your location. Events can be added by anyone; users, companies and organisations.
-      </p>
-      <div style={{ textAlign: 'center', margin: 20}} >
-        <Geolocation value="Get Going Today" cta="Sign up to create and share"/>
-      </div>
-      <OnboardingForm position={props.position}/>
-
-    </section>
-  </div>
-  );
-}
-
-export default Onboarding

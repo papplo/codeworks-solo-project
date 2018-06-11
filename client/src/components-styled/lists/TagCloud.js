@@ -1,7 +1,8 @@
 import styled from "styled-components";
 
 export const Tag = styled.li`
-  display: inline-block;
+  display: flex;
+  justify-content: space-between;
   margin: 0 .7rem 0 0;
   height: 18px;
   border-radius: 2rem;
@@ -18,6 +19,7 @@ export const Tag = styled.li`
 
 export const TagCloud = styled.ul`
   display: flex;
+  justify-content: center;
   flex-direction: row;
   flex-wrap: wrap;
   margin: 0;

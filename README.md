@@ -11,6 +11,9 @@ Where i attend in the April 2018-batch, this is our first soloproject where we g
 ___
 
 ## Developers log
+June 11, 2018: Adding cross-branch work to server-branch. Soon to merge into master.
+ - Proved hard to maintain project goals intact, not stressed about outcome, but design is a painpoint and getting components to work without problems equally as time-consuming.
+ - would rather have worked without such a big framework of ideas, to just test out main goal points: how to make a PWA.
 
 June 8, 2018: Merging into Master
 - Just decided to merge branch into Master, now going forward with real data, backend and further styling for a complete 'read-only' app.

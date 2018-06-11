@@ -4,11 +4,12 @@ import { Link } from 'react-router-dom';
 import {TagCloud, Tag} from "../../components-styled/lists/TagCloud";
 
 export const OnboardingForm = (props) => {
-  const { position } = props;
 
+console.log(props);
   return (
     <section>
-        <h1>What floats your boat?</h1>
+        <h5>Tell us about yourself {props.user.username}</h5>
+        <h3>What are you looking to discover?</h3>
         <TagCloud>
           <Tag>Art</Tag>
           <Tag>Music</Tag>

@@ -1,5 +1,5 @@
 import styled from "styled-components";
-
+import '../globalVars.css';
 const Button = styled.button`
 
   /* Adapt the colours based on color prop */
@@ -19,7 +19,9 @@ const Button = styled.button`
     props => props.size ?
     '1.15em' : '.9em'};
 
-
+  border-radius: ${
+    props => props.round ?
+    '15px' : '3px'};
 
   border-radius: 3px;
   padding: 0.25em 1em;
