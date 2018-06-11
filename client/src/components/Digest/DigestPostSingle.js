@@ -13,7 +13,7 @@ export const DigestPostSingle = (props) => {
     <li className="single" data-tag={node.title_url} >
 
       <Link to={{
-        pathname: `/digest/${node.node_type.name_url}/${node.title_url}/${node._id}`,
+        pathname: `/digest/${node.node_type_name}/${node.title_url}/${node._id}`,
         state: {
           data: {node},
         }
