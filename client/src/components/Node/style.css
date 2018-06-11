@@ -3,26 +3,23 @@
   top: 0;
   left: 0;
   width: 100vw;
-  height: 100vw;
+  height: 100vh;
+  padding-bottom: 2em;
   opacity: 1;
   display: flex;
   flex-direction: column;
   background: rgba(8, 8, 8, 0.5);
-  justify-content: flex-start; /* align items in Main Axis */
-  align-items: stretch; /* align items in Cross Axis */
-  align-content: stretch; /* Extra space in Cross Axis */
+  justify-content: center; /* align items in Main Axis */
+  align-items:center; /* align items in Cross Axis */
 }
 
 
 #nodeForm .node-form {
   max-width: 672px;
-  flex-grow: 1 1 auto;
-  justify-content: flex-start; /* align items in Main Axis */
-  align-items: stretch; /* align items in Cross Axis */
-  align-content: stretch; /* Extra space in Cross Axis */
-
-  background: rgb(214, 213, 212);
+  flex: 0;
+  background: var(--theme-primary-bgcolor);
   border-radius: .8em;
   width: auto;
-  margin: .5em auto;
+  margin: .5em;
+  margin-bottom: 1.5em;
 }

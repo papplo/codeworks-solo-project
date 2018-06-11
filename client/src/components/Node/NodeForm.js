@@ -1,9 +1,8 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
 
-import Input  from '../../components-styled/forms/Input';
+import {Input, Textarea } from '../../components-styled/forms/Input';
 import Button from '../../components-styled/buttons/Button';
-import {TagCloud, Tag} from "../../components-styled/lists/TagCloud";
+import { TagCloud, Tag } from "../../components-styled/lists/TagCloud";
 
 import './style.css';
 
@@ -12,12 +11,21 @@ return (
   <div id="nodeForm">
     <section className="node-form is-centered">
       <form
-      onChange = {(e,value) => props.onChange(e, value)}>
+      // onChange = {(e,value) => props.onChange(e, value)}
+      >
         <label><span>Share something!</span></label>
-        <Input id="node-title" placeholder="Whats up?" />
-        <Input id="node-oveeview" placeholder="Write something..." />
+        <Input
+          id="node-title"
+          placeholder="Whats up?" />
+        <Textarea
+          id="node-overview"
+          placeholder="Write something..."
+          rows="6">
+        </Textarea>
 
-          <Button size='true' color="var(--theme-primary-color)">Add Photo</Button>
+          <Button
+            size="true" round="true" color="var(--theme-primary-color)"
+            >Add Photo</Button>
           <div>
             <h4>What categories does this fit in?</h4>
           <TagCloud>
@@ -33,9 +41,7 @@ return (
         </div>
       </form>
       </section>
-      <section className="node-form is-centered">
-        <Button size="true" color="black">Post your news!</Button>
-    </section>
+
   </div>
   );
 }
