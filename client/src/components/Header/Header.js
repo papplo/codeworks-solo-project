@@ -3,19 +3,28 @@ import { Link } from 'react-router-dom';
 
 /* Styled Components from our evergrowing library*/
 import Button from "../../components-styled/buttons/Button";
-
+import Avatar from "../../components-styled/avatar/Avatar"
 import './style.css';
 
 export const Header = (props) => {
+  console.log('header: ', props);
   return (
     <header className="App-header menu">
       <ul>
         <li> <Link to="/">Tellus</Link></li>
         <li> <Link to="/digest"><span role="img" aria-label="logo">🌎</span> Barcelona</Link></li>
         <li>
-          <Link to="/account">
-            <Button color="#8BB48F">Login</Button>
-          </Link>
+
+          {!props.TellusUser.username?
+            <Link to="/account">
+              <Button color="#8BB48F">Login</Button>
+            </Link>
+            :
+            <Avatar color="#60da6c">
+              <img alt="avatar" height="32px" width="32px" src="./avatar_placeholder_64x64.png" />
+              <span>{props.TellusUser.username}</span></Avatar>
+          }
+
         </li>
 
 
