@@ -37,7 +37,9 @@ const createUser = async (req, res) => {
       'tokenSeed'   : uuidv4(),
     })
     user.save()
-      .then(event => res.json(event))
+      .then(event => res.send({
+        "message" : "Congrats!",
+        "userData" : event}))
       .then(countUsers())
       .then(res.cookie('TellusUser', user.tokenSeed))
       .catch(e => console.log(e));
