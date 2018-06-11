@@ -12,10 +12,10 @@ return (
       <form
       onChange = {(e,value) => props.onChange(e, value)}>
         <label><h3>Signup to Tellus</h3></label>
+        {props.state.server_error && <p>props.state.server_message</p>}
         <Input id="username" placeholder="Username" />
         <Input id="email" placeholder="E-Mail" />
         <Input id="password" placeholder="Password" />
-        <p>{props.state.server_error? props.state.server_message : ''}</p>
         <Button
           id='signup'
           onClick={props.onSubmit}

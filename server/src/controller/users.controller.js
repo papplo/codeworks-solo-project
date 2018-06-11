@@ -21,7 +21,7 @@ const createUser = async (req, res) => {
     const check = await TellusUser.findOne({'username': username})
     if (check) {
       console.log(req.body, ' <- Request.body. ERR USER Exists');
-      res.status(400).send({ error: "User or E-mail already exists!" });
+      res.status(400).send({ message: "User or E-mail already exists!", error: 'true' });
       res.end()
     }
 
@@ -44,7 +44,7 @@ const createUser = async (req, res) => {
     }
   else {
     console.log(req.body, ' <- Request.body. Prob Somethings wrong');
-    res.status(400).send({ error: "Something is missing in your post!" });
+    res.status(400).send({ message: "Something is missing in your post!", error: 'true' });
     res.end()
   }
 }
@@ -54,7 +54,7 @@ const getUsers = (req, res) => {
     .then(users => res.json(
       users.map(user => user.username)))
     .catch((e) => (
-      res.status(400).send('Somethings wrong with the world today!', { error: e })
+      res.status(400).send({ message: 'Somethings wrong with the world today!', error: 'true' })
     ));
 }
 

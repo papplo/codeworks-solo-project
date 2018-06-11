@@ -8,12 +8,14 @@ export default class LoginSignup extends React.Component {
     this.state = {
       user_name: '',
       user_password: '',
+      user_email: '',
       logged_in: 'false',
       server_message: '',
       server_error: false,
       in_view : 'login'
       }
     this.apiUserAuth = 'http://localhost:4000/user';
+    this.apiUserNew = 'http://localhost:4000/users';
   }
 
   handleView(target) {
@@ -24,26 +26,26 @@ export default class LoginSignup extends React.Component {
   handleTyping(event) {
     if (event.target.id === 'username') {
       this.setState({'user_name' : event.target.value});
-    } else {
+    } else if (event.target.id === 'password'){
       this.setState({'user_password' : event.target.value});
+    } else {
+      this.setState({'user_email': event.target.value})
     }
   }
 
   handleSubmit(event) {
     event.preventDefault();
+    let ApiRoute
+    if (event.target.id === 'login') {
+      console.log('login');
+      ApiRoute = this.apiUserAuth;
+    }
+    else if (event.target.id === 'signup') {
+      console.log('signup');
+      ApiRoute = this.apiUserNew;
+    }
 
-    // if (event.target.id === 'login') {
-    //   console.log('login');
-    //   this.apiUserAuth = this.apiUserAuth + 'user';
-    // }
-    // else if (event.target.id === 'signup') {
-    //   console.log('signup');
-    //   this.apiUserAuth = this.apiUserAuth + 'users';
-    // }
-    //
-    //
-
-    fetch(this.apiUserAuth, {
+    fetch(ApiRoute, {
       method: 'POST',
       headers: {
        'Accept': 'application/json',
@@ -52,6 +54,7 @@ export default class LoginSignup extends React.Component {
       body: JSON.stringify({
         username: this.state.user_name,
         password: this.state.user_password,
+        email: this.state.user_email,
       })
     })
       .then(res => res.json())

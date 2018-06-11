@@ -12,9 +12,9 @@ return (
       <form
       onChange = {(e,value) => props.onChange(e, value)}>
         <label><h3>Login to Tellus</h3></label>
+        {props.state.server_error && <p>props.state.server_message</p>}
         <Input id="username" placeholder="Username" />
         <Input id="password" placeholder="Password" />
-        <p>{props.state.server_error? props.state.server_message : ''}</p>
         <Button
           id='login'
           onClick={props.onSubmit}
