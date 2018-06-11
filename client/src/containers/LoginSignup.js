@@ -9,10 +9,10 @@ export default class LoginSignup extends React.Component {
       user_name: '',
       user_password: '',
       user_email: '',
-      logged_in: 'false',
+
       server_message: '',
       server_error: false,
-      in_view : 'login'
+      in_view : this.props.in_view || 'login',
       }
     this.apiUserAuth = 'http://localhost:4000/user';
     this.apiUserNew = 'http://localhost:4000/users';
@@ -33,7 +33,7 @@ export default class LoginSignup extends React.Component {
     }
   }
 
-  handleSubmit(event) {
+  async handleSubmit(event) {
     event.preventDefault();
     let ApiRoute
     if (event.target.id === 'login') {
@@ -45,7 +45,7 @@ export default class LoginSignup extends React.Component {
       ApiRoute = this.apiUserNew;
     }
 
-    fetch(ApiRoute, {
+    await fetch(ApiRoute, {
       method: 'POST',
       headers: {
        'Accept': 'application/json',
@@ -58,27 +58,41 @@ export default class LoginSignup extends React.Component {
       })
     })
       .then(res => res.json())
-      .then(res => this.setState(
-        {'server_message' : res.message, 'server_error': res.error, 'logged_in' : res.username}
-      ))
+      .then(res => this.setState({logged_in: res.userData}))
+      // .then(res => this.setState({
+      //   'server_message' : res.userData? '1': '0',
+      //   'server_error': res.error,
+      //   'logged_in' : {email: res.email, tokenSeed: res.tokenSeed}
+      // }
+      // ))
+      .then(res => this.props.onComplete(this.state.logged_in))
   }
 
   renderLogin() {
-    return <LoginForm
-      state={this.state}
-      onChangeView={() => this.handleView('signup')}
-      onSubmit={(e) => this.handleSubmit(e)}
-      onChange={(e,value) => this.handleTyping(e, value)}
-    />
+    return (
+      <div>{this.state.logged_in && <p>{this.state.logged_in.username}</p>}
+      <LoginForm
+        state={this.state}
+        onChangeView={() => this.handleView('signup')}
+        onSubmit={(e) => this.handleSubmit(e)}
+        onChange={(e,value) => this.handleTyping(e, value)}
+      />
+    </div>
+    )
   }
 
   renderSignup() {
-    return <SignupForm
+    return (
+      <div>{this.state.logged_in && <p>{this.state.logged_in.username}</p>}
+
+      <SignupForm
       state={this.state}
       onChangeView={() => this.handleView('login')}
       onSubmit={(e) => this.handleSubmit(e)}
       onChange={(e,value) => this.handleTyping(e, value)}
     />
+  </div>
+  )
   }
 
   render() {
