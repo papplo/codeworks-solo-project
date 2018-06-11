@@ -20,6 +20,7 @@ const nodeSchema = mongoose.Schema({
   short_description:  { type: String, required: true },
   overview:           { type: String, required: true },
 
+  geolocation:        { type: { type: String }, coordinates: [ ] },
   created_at:         { type: Date, default : () => new Date() },
   created_released:   { type: Date, default : () => new Date() },
   created_lifespan:   { type: Number, default : 3600*24*7 },
