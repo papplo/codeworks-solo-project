@@ -21,7 +21,7 @@ export const Header = (props) => {
             </Link>
             :
             <Avatar color="#60da6c">
-              <img alt="avatar" height="32px" width="32px" src="./avatar_placeholder_64x64.png" />
+              <img alt="" height="25px" width="25px" src="./avatar_placeholder_64x64.png" />
               <span>{props.TellusUser.username}</span></Avatar>
           }
 

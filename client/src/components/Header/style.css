@@ -24,3 +24,14 @@
   tap-highlight-color: rgba(255,255,255,0.4);
   outline: 0;
 }
+
+.menu li figure {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  font-size: .77em;
+}
+
+.menu li figure img{
+  margin: 0 5px;
+}
