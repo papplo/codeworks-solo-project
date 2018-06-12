@@ -153,7 +153,6 @@ section.digest-single .article-details {
 }
 
 .article-comments input:focus {
-  margin: 0 -10px;
   padding: 12px 20px 15px;
   color: #000;
   outline-color: var(--theme-primary-color);

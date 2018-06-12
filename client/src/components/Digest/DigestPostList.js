@@ -5,8 +5,7 @@ import './style.css';
 
 const DigestPostList = (props) => {
   const { nodes } = props.nodes;
-  console.log('Display nodelist:', nodes);
-
+  console.log(nodes);
   return (
     <div>
       <section className="digest-posts">
@@ -20,7 +19,8 @@ const DigestPostList = (props) => {
                   node={el}
                   />
               )
-            )}</ul>
+            )}
+          </ul>
 
       </section>
     </div>

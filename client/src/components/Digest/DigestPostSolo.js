@@ -6,26 +6,26 @@ import {Input} from "../../components-styled/forms/Input"
 export const DigestPostSolo = (props) => {
   this.state = props.history.location.state || {};
   const node = props.history.location.state.data.node;
-  console.log(node);
+
   return (
     <section className="digest-single">
       {
         !props.history.location.state ?
           'Error: direct link to this url does not have object data in state - business logics for this single view will evolve...'
           :
-          <article class="blog-card" data-tag={node.node_type_name + '/'
+          <article className="blog-card" data-tag={node.node_type_name + '/'
           + node.title_url + '/' + node._id}>
-            <div class="post-meta">
+            <div className="post-meta">
                 <Avatar className="avatar card-avatar" color="#60da6c">
                   <img alt="" height="45px" width="45px" src="./public/avatar_placeholder_64x64.png" />
                   <span>{!props.TellusUser? 'Ashley King' : node.created_by}</span></Avatar>
                   <span className="node-type">{node.node_type}</span>
             </div>
-            <div class="article-details">
-              <h1 class="post-title">{ node.title }</h1>
+            <div className="article-details">
+              <h1 className="post-title">{ node.title }</h1>
               <h3>{ node.short_description }</h3>
-              <img class="post-image" src={node.poster_path} />
-              <p class="post-description">{ node.overview }</p>
+              <img className="post-image" src={node.poster_path} />
+              <p className="post-description">{ node.overview }</p>
             </div>
 
             <div className="article-comments">

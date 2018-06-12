@@ -1,6 +1,7 @@
 import React from 'react';
-
 import DigestPostList from '../components/Digest/DigestPostList';
+
+const moment = require('moment');
 
 //import {mockdata} from './DigestMockData';
 
@@ -10,18 +11,35 @@ class Digest extends React.Component {
   constructor (props) {
     super(props)
     this.state = {
-      nodes : []
+      nodes : JSON.parse(localStorage.getItem('TellusNodes')) || [],
+      nodeTime : '',
     }
+
   }
 
-  componentDidMount() {
-    console.log('DigestContainer did mount, fetching: ', apiRouteNodes);
-    fetch(apiRouteNodes, {
-      method: 'GET',
-      authorization : 'Bearer-Token : 1111'
-    })
-    .then(res => res.json())
-    .then(res => this.setState({nodes : res}))
+
+  /* Business Logic here */
+  componentDidMount () {
+    console.log('Component did Mount: ', moment().toISOString());
+    this.compareNodeTimes();
+  }
+
+  compareNodeTimes () {
+    const latest = localStorage.getItem('NodeTime');
+    const now = moment().toISOString();
+    const compare = moment(latest).diff(now);
+    console.log(compare);
+    if (compare < -10000) {
+      console.log('Refreshing nodes: ', apiRouteNodes);
+      fetch(apiRouteNodes, {method: 'GET'})
+      .then(res => res.json())
+      .then(nodes => this.setState({nodes: nodes}))
+
+      const now = moment().toISOString();;
+      localStorage.setItem('NodeTime', new Date())
+    } else {
+      console.log('Nodes were recently updated');
+    }
   }
 
 
@@ -31,6 +49,7 @@ class Digest extends React.Component {
       <DigestPostList nodes={this.state} />
       <DigestPostList nodes={this.state} />
       <DigestPostList nodes={this.state} />
+
       </div>
     );
   }
