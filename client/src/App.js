@@ -59,9 +59,13 @@ class App extends Component {
         <div className="App">
 
           <Header
+            fromRoute='true'
+            props={this.props}
             TellusUser={this.state.TellusUser}/>
           <Switch>
-            <Route exact path="/" TellusUser={this.state.TellusUser} component={Onboarding}/>
+            <Route exact path="/"
+            props={this.props}
+            TellusUser={this.state.TellusUser} component={Onboarding}/>
 
             <Route path="/account"
             in_view="signup"

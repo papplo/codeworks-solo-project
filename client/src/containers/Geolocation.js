@@ -1,5 +1,6 @@
 import React from 'react';
 import Button from "../components-styled/buttons/Button";
+import { Link } from 'react-router-dom';
 
 
 
@@ -8,6 +9,10 @@ export default class Geolocation extends React.Component {
     super(props)
     this.output = document.getElementById('mapref');
 
+  }
+
+  componentDidMount() {
+    console.log('confetti');
   }
 
   findGeoLocation = () => {
@@ -51,17 +56,18 @@ export default class Geolocation extends React.Component {
 
 
   render() {
-    console.log(this.state);
     return (
-      <div>
+      <div >
+        <Link to="/account" in_view="signup">
           <Button
             color='white'
-            size="true"
+            round='true'
+            size='true'
             onClick={() => this.findGeoLocation()} >
             {this.props.value}
           </Button>
-
           <br /><span>{this.props.cta}</span>
+        </Link>
       </div>
     );
   }

@@ -5,6 +5,7 @@ import '../components/Onboarding/style.css';
 import Button from '../components-styled/buttons/Button';
 import { OnboardingForm } from '../components/Onboarding/OnboardingForm';
 import LoginSignup from './LoginSignup';
+import "../../node_modules/confetti-js/dist/index.min.js";
 
 export default class Onboarding extends React.Component {
   constructor (props) {
@@ -20,6 +21,17 @@ export default class Onboarding extends React.Component {
     }
   }
 
+componentDidMount() {
+  const confettiSettings = {
+    target: 'confetti',
+    props: ['circle', 'square', 'triangle'],
+    colors: [[132, 176, 185]],
+    size: 1.2
+   };
+  const confetti = new window.ConfettiGenerator(confettiSettings);
+  confetti.render();
+}
+
   positionReturn (value) {
     this.setState(value);
     localStorage.setItem('TellusGeo', JSON.stringify(value));
@@ -27,22 +39,21 @@ export default class Onboarding extends React.Component {
 
   render() {
     return (
-
     <div>
       <section className="onboarding">
+        <img alt="" height="303px" width="185px" src="/tellusLogo@2x.png" />
         <h5>{this.state.position && 'We have position'}</h5>
         { /*<p>
           Tellus crawls the net to discover events and happenings that are based on your location. Events can be added by anyone; users, companies and organisations.
         </p> */}
         <Link to="/account" in_view="signup">
-          <img alt="" height="303px" width="185px" src="/tellusLogo@2x.png" />
         {/* <Button round="true" color="black" size="true">signup</Button> */}
       </Link>
       <Geolocation
         value="Around the world you go!"
-        cta="Tellus will take you!"
         onReturn={(value) => this.positionReturn(value)} props={this.props}/>
       </section>
+      <canvas id="confetti"></canvas>
 
 
     </div>

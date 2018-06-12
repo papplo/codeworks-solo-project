@@ -6,20 +6,35 @@ import Button from "../../components-styled/buttons/Button";
 import Avatar from "../../components-styled/avatar/Avatar"
 import './style.css';
 
+
 export const Header = (props) => {
   if (localStorage.getItem('TellusUser')) {
     const user = JSON.parse(localStorage.getItem('TellusUser'));
     console.log('Welcome ' +user.username);
   }
-  console.log('header props: ', props);
-  return (
+
+const renderHeader = function () {
+  const loading = <div class="spinner"></div>;
+
+  let geolocation = false;
+
+  if (JSON.parse(localStorage.getItem('TellusGeo'))) {
+    geolocation = JSON.parse(localStorage.getItem('TellusGeo'));
+    console.log(!geolocation.position);
+  }
+
+  const pathName = window.location.pathname;
+  if (pathName == '/' || pathName == '/Digest') {
+    console.log(pathName, 'No Header here!');
+  }
+  else {
+    return (
     <header className="App-header menu">
       <ul>
-        {/* {this.state.history ===} */}
         <li>
           <Link to="/digest">
             <img alt="" height="30px" width="25px" src="/iconStarredPin@2x.png" />
-            <span>Barcelona</span>
+            <span>{!geolocation? <div class="spinner"></div> : 'Barcelona'}</span>
           </Link>
         </li>
         <li>
@@ -28,7 +43,15 @@ export const Header = (props) => {
           </Link>
         </li>
       </ul>
-
     </header>
+  )
+  }
+}
+
+
+  return (
+    <div>
+    {renderHeader()}
+    </div>
   );
 }
