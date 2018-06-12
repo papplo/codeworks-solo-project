@@ -9,9 +9,10 @@ const DigestPostList = (props) => {
 
   return (
     <div>
-        <h2>Happening in Barcelona</h2>
       <section className="digest-posts">
-        <ul className="music">{nodes.filter((el, index) => (index < 10))
+        <h3> - {nodes.length} posts</h3>
+          <ul className="music">
+            {nodes.filter((el, index) => (index < 10))
             .map(
               (el) => (
                 <DigestPostSingle
