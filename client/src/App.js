@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { BrowserRouter as Router, Route, Switch, Redirect } from 'react-router-dom';
+// Load Open Sans typeface
 
 /* Redux props and dispatches go here */
 import { actionSimple } from './actions/actions';
@@ -19,6 +20,7 @@ import { Header }  from './components/Header/Header.js';
 
 
 import './App.css';
+require('typeface-open-sans');
 
 class App extends Component {
 

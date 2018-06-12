@@ -6,13 +6,15 @@
     "react": "^16.4.0",
     "react-dom": "^16.4.0",
     "react-helmet": "^5.2.0",
+    "react-images-upload": "^1.1.99",
     "react-redux": "^5.0.7",
     "react-router-dom": "^4.3.1",
     "react-scripts": "1.1.4",
     "react-transition-group": "^2.3.1",
     "redux": "^4.0.0",
     "redux-thunk": "^2.3.0",
-    "styled-components": "^3.3.2"
+    "styled-components": "^3.3.2",
+    "typeface-open-sans": "0.0.54"
   },
   "scripts": {
     "start": "react-scripts start",
