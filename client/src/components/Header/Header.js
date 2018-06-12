@@ -7,27 +7,26 @@ import Avatar from "../../components-styled/avatar/Avatar"
 import './style.css';
 
 export const Header = (props) => {
-  console.log('header: ', props);
+  if (localStorage.getItem('TellusUser')) {
+    const user = JSON.parse(localStorage.getItem('TellusUser'));
+    console.log('Welcome ' +user.username);
+  }
+  console.log('header props: ', props);
   return (
     <header className="App-header menu">
       <ul>
-        <li> <Link to="/">Tellus</Link></li>
-        <li> <Link to="/digest"><span role="img" aria-label="logo">🌎</span> Barcelona</Link></li>
+        {/* {this.state.history ===} */}
         <li>
-
-          {!props.TellusUser.username?
-            <Link to="/account">
-              <Button color="#8BB48F">Login</Button>
-            </Link>
-            :
-            <Avatar color="#60da6c">
-              <img alt="" height="25px" width="25px" src="./avatar_placeholder_64x64.png" />
-              <span>{props.TellusUser.username}</span></Avatar>
-          }
-
+          <Link to="/digest">
+            <img alt="" height="30px" width="25px" src="/iconStarredPin@2x.png" />
+            <span>Barcelona</span>
+          </Link>
         </li>
-
-
+        <li>
+          <Link to="/digest">
+            <img alt="" height="25px" width="25px" src="/iconSearch@2x.png" />
+          </Link>
+        </li>
       </ul>
 
     </header>

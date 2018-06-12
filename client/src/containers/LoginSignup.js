@@ -60,7 +60,11 @@ export default class LoginSignup extends React.Component {
       })
     })
       .then(res => res.json())
-      .then(res => this.setState({logged_in: res.userData}))
+      .then(res => {
+        localStorage.setItem('TellusUser', JSON.stringify(res))
+        this.setState({logged_in: res.userData})
+      })
+
       // .then(res => this.setState({
       //   'server_message' : res.userData? '1': '0',
       //   'server_error': res.error,

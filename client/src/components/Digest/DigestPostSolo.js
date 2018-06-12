@@ -6,7 +6,7 @@ import {Input} from "../../components-styled/forms/Input"
 export const DigestPostSolo = (props) => {
   this.state = props.history.location.state || {};
   const node = props.history.location.state.data.node;
-
+  window.scrollTo(0, 0);
   return (
     <section className="digest-single">
       {
@@ -17,7 +17,7 @@ export const DigestPostSolo = (props) => {
           + node.title_url + '/' + node._id}>
             <div className="post-meta">
                 <Avatar className="avatar card-avatar" color="#60da6c">
-                  <img alt="" height="45px" width="45px" src="./public/avatar_placeholder_64x64.png" />
+                  <img alt="" height="45px" width="45px" src="/avatar_placeholder_64x64.png" />
                   <span>{!props.TellusUser? 'Ashley King' : node.created_by}</span></Avatar>
                   <span className="node-type">{node.node_type}</span>
             </div>

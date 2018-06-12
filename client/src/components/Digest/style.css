@@ -1,6 +1,6 @@
 section.digest-posts {
   margin: 0;
-  padding: 20px 0;
+  padding: 10px 0;
   background: var(--theme-secondary-bgcolor);
 }
 
@@ -15,7 +15,7 @@ section.digest-posts > h3 {
 }
 
 .digest-posts ul {
-  padding: 0 20px;
+  padding: 0 10px;
   list-style: none;
   display: flex;
   flex-grow: 1;
@@ -94,7 +94,7 @@ section.digest-posts > h3 {
   width: 100vw;
 	object-fit: cover;
   max-height: 200px;
-  width: 370px;
+  width: 390px;
   max-width: 90vw;
 }
 

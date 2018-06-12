@@ -23,22 +23,25 @@ export default class Geolocation extends React.Component {
       const latlong = `${latitude} : ${longitude}`
       console.log(`You are at: ${latitude}, ${longitude}`);
 
-      this.props.setState({
+      this.props.onReturn({
         position: true,
-        latitude: latitude,
-        longitude: longitude,
-        latlong: latlong
-      })
+          latitude: latitude,
+          longitude: longitude,
+          latlong: latlong
+      });
+
+
     }
 
     const error = (error) => {
-      console.log('error');
-      this.props.setState({
+      alert('error');
+
+      this.props.onReturn({
         position: true,
         latitude: 'unknown',
         longitude: 'unknown',
         latlong: `We were unable to retrieve your location: Type in a place you want to discover`
-      })
+      });
     }
 
     /* promises ahead, beware! :) */
@@ -51,18 +54,14 @@ export default class Geolocation extends React.Component {
     console.log(this.state);
     return (
       <div>
-
-        <div>
-          <Button color='#8BB48F' size onClick={() => this.findGeoLocation()} >
+          <Button
+            color='white'
+            size="true"
+            onClick={() => this.findGeoLocation()} >
             {this.props.value}
           </Button>
 
           <br /><span>{this.props.cta}</span>
-        </div>
-
-        <p id="mapref">
-          {this.position? 1: 2}
-        </p>
       </div>
     );
   }

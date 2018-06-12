@@ -1,5 +1,14 @@
 .onboarding {
+ background-color: var(--theme-primary-color);
+ display: flex;
+ flex-direction: column;
+ align-items: center;
+ justify-content: center;
+ height: 100vh;
+}
 
+.onboarding a {
+  /* margin-bottom: 20vh; */
 }
 
 .onboarding p {

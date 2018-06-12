@@ -29,6 +29,7 @@ class App extends Component {
     this.getUser();
     this.state = {
       TellusUser : JSON.parse(localStorage.getItem('TellusUser')) || '',
+      TellusNodes: JSON.parse(localStorage.getItem('TellusNodes')) || [],
       position: null,
       latitude: '',
       longitude: '',

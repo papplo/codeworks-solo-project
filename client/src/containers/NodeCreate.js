@@ -1,6 +1,6 @@
 import React from 'react';
 import NodeButton from '../components-styled/buttons/NodeButton';
-import {NodeForm} from '../components/Node/NodeForm';
+import NodeForm from '../components/Node/NodeForm';
 
 
 export default class NodeCreate extends React.Component {
@@ -14,11 +14,31 @@ export default class NodeCreate extends React.Component {
       form_title: '',
       form_overview: '',
       node_type: 'General',
-
+      pictures: [],
+      file: '',
+      imagePreviewUrl: '',
     }
+  this.onDrop = this.onDrop.bind(this);
   this.apiNodeAuth = 'http://localhost:4000/nodes';
   this.apiNodeNew = 'http://localhost:4000/nodes';
   }
+
+  onDrop(picture) {
+    this.setState({
+        pictures: this.state.pictures.concat(picture),
+    });
+    // let reader = new FileReader();
+    // let file = picture;
+    // reader.onloadend = () => {
+    //   this.setState({
+    //     file: file,
+    //     imagePreviewUrl: reader.result
+    //   });
+    // }
+    // reader.readAsDataURL(file)
+  }
+
+
 
   toggleForm() {
     console.log('Toggling form Visibility')
@@ -42,7 +62,7 @@ export default class NodeCreate extends React.Component {
   }
   handleSubmit(event) {
     console.log(event.target);
-
+    console.log(this.state.pictures[0]);
     let ApiRoute = this.apiNodeNew;
 
     fetch(ApiRoute, {
@@ -52,6 +72,7 @@ export default class NodeCreate extends React.Component {
        'Content-Type': 'application/json'
       },
       body: JSON.stringify({
+        poster_path: this.state.pictures[0].name,
         title: this.state.form_title,
         overview: this.state.form_overview,
         node_type: this.state.node_type,
@@ -71,9 +92,12 @@ export default class NodeCreate extends React.Component {
     return (
       <div>
       {this.state.formVisible &&
+        <div>
         <NodeForm
+          onDrop={(picture) => this.onDrop(picture)}
           onChange={(e) => this.handleTyping(e)}
-        />}
+        />
+        </div>}
         <NodeButton
           animated='true'
           className= {this.state.buttonExpand && 'is-expanded'}

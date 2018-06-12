@@ -5,7 +5,7 @@ import './style.css';
 
 const DigestPostList = (props) => {
   const { nodes } = props.nodes;
-  console.log(nodes);
+  // console.log('Nodes for list: ',nodes);
   return (
     <div>
       <section className="digest-posts">
