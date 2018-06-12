@@ -29,11 +29,14 @@ class Digest extends React.Component {
     const now = moment().toISOString();
     const compare = moment(latest).diff(now);
     console.log(compare);
-    if (compare < -10000) {
+    if (compare < -120000) {
       console.log('Refreshing nodes: ', apiRouteNodes);
       fetch(apiRouteNodes, {method: 'GET'})
       .then(res => res.json())
-      .then(nodes => this.setState({nodes: nodes}))
+      .then(nodes => {
+        localStorage.setItem('TellusNodes', JSON.stringify(nodes))
+        this.setState({nodes: nodes})
+      })
 
       const now = moment().toISOString();;
       localStorage.setItem('NodeTime', new Date())
