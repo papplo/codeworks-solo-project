@@ -1,7 +1,7 @@
 section.digest-posts {
   margin: 0;
   padding: 20px 0;
-  background: rgb(223, 223, 210);
+  background: var(--theme-secondary-bgcolor);
 }
 
 section.digest-posts > h3 {
@@ -28,21 +28,23 @@ section.digest-posts > h3 {
 .digest-posts ul li {
   margin-right: 15px;
   display: inline-flex;
+  width: 400px;
 }
 
 .digest-posts ul li:last-child {
-  padding-right: 65px;
+  padding-right: 20px;
 }
 
 
 .blog-card {
   display: flex;
   flex-direction: row;
+  flex-wrap: wrap;
   background: white;
   box-shadow: 0 0.1875rem 1.5rem $shadow;
-  border-radius: 0.375rem;
   overflow: hidden;
 }
+
 
 .card-link {
   position: relative;
@@ -59,12 +61,41 @@ section.digest-posts > h3 {
   }
 }
 
+.card-avatar span{
+  font-size: 1.1em;
+  font-weight: 700 !important;
+}
+
+.card-avatar img {
+  z-index: 1000;
+}
+
+.post-meta {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  padding: 5px 16px 0px 5px;
+  width: 100%;
+  justify-content: space-between;
+  line-height: 100%;
+}
+
+.post-meta span.node-type {
+  font-size: .8em;
+  font-weight: 700;
+  color: var(--theme-secondary-color);
+  text-transform:uppercase;
+
+}
+
 .post-image {
   @include transition(opacity 0.3s ease);
   display: block;
-  width: 100%;
+  width: 100vw;
 	object-fit: cover;
   max-height: 200px;
+  width: 370px;
+  max-width: 90vw;
 }
 
 .article-details {
@@ -100,14 +131,9 @@ section.digest-posts > h3 {
   border-top: 0.0625rem solid #ebebeb;
 }
 
-@media (max-width: 40rem) {
-  .blog-card {
-    flex-wrap: wrap;
-  }
-}
-
 section.digest-single {
   padding: 0;
+  margin-bottom:  80px;
 }
 section.digest-single .post-image {
   max-height: 400px;
@@ -115,4 +141,43 @@ section.digest-single .post-image {
 
 section.digest-single .article-details {
 
+}
+
+
+.article-comments {
+  padding: 8px 20px 8px 20px;
+  background-color: var(--theme-primary-bgcolor);
+  position: fixed;
+  bottom: 0;
+  width: 100vw;
+}
+
+.article-comments input:focus {
+  margin: 0 -10px;
+  padding: 12px 20px 15px;
+  color: #000;
+  outline-color: var(--theme-primary-color);
+  width: 85vw;
+}
+
+
+@media only screen and (max-width:767px) {
+  .blog-card {
+    flex-wrap: wrap;
+  }
+}
+@media only screen and (min-width:768px) {
+  section.digest-posts{
+    width: 100vw;
+  }
+  section.digest-posts ul li.single {
+    width: 690px !important;
+  }
+  .post-image {
+    width: 600px;
+  }
+  section.digest-single .post-image {
+    width: 100vw;
+    max-height: 600px !important;
+  }
 }

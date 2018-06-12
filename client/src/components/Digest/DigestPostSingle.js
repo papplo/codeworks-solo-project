@@ -1,5 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import Avatar from "../../components-styled/avatar/Avatar"
 
 export const DigestPostSingle = (props) => {
   console.log(props);
@@ -17,7 +18,13 @@ export const DigestPostSingle = (props) => {
       }
     }}
       className="card-link">
-      <article class="blog-card" data-tag={node.title_url}>
+      <article class="blog-card">
+        <div class="post-meta">
+            <Avatar className="avatar card-avatar" color="#60da6c">
+              <img alt="" height="30px" width="30px" src="./avatar_placeholder_64x64.png" />
+              <span>{!props.TellusUser? 'Ashley King' : 'logged'}</span></Avatar>
+              <span className="node-type">{node.node_type}</span>
+        </div>
         <img class="post-image" src={node.poster_path} />
         <div class="article-details">
           <h4 class="post-category">{ node.node_type }</h4>

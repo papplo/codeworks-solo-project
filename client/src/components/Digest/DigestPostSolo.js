@@ -1,4 +1,7 @@
 import React from 'react';
+import Avatar from "../../components-styled/avatar/Avatar"
+import {Input} from "../../components-styled/forms/Input"
+
 
 export const DigestPostSolo = (props) => {
   this.state = props.history.location.state || {};
@@ -10,13 +13,24 @@ export const DigestPostSolo = (props) => {
         !props.history.location.state ?
           'Error: direct link to this url does not have object data in state - business logics for this single view will evolve...'
           :
-          <article class="blog-card" data-tag={node.title_url}>
-            <img class="post-image" src={node.poster_path} />
+          <article class="blog-card" data-tag={node.node_type_name + '/'
+          + node.title_url + '/' + node._id}>
+            <div class="post-meta">
+                <Avatar className="avatar card-avatar" color="#60da6c">
+                  <img alt="" height="45px" width="45px" src="./public/avatar_placeholder_64x64.png" />
+                  <span>{!props.TellusUser? 'Ashley King' : node.created_by}</span></Avatar>
+                  <span className="node-type">{node.node_type}</span>
+            </div>
             <div class="article-details">
-              <h4 class="post-category">{ node.node_type }</h4>
-              <h3 class="post-title">{ node.title }</h3>
+              <h1 class="post-title">{ node.title }</h1>
+              <h3>{ node.short_description }</h3>
+              <img class="post-image" src={node.poster_path} />
               <p class="post-description">{ node.overview }</p>
-              <p class="post-author">By { node.created_by }</p>
+            </div>
+
+            <div className="article-comments">
+              <span>12 upvotes 💙</span>
+              <Input color="white" size="true" bg="rgb(230, 228, 228)" placeholder="Comment"/>
             </div>
           </article>
       }

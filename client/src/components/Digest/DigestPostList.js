@@ -10,7 +10,7 @@ const DigestPostList = (props) => {
   return (
     <div>
       <section className="digest-posts">
-        <h3> - {nodes.length} posts</h3>
+        {/* <h3> - {nodes.length} posts</h3> */}
           <ul className="music">
             {nodes.filter((el, index) => (index < 10))
             .map(
