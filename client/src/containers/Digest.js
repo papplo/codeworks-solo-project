@@ -61,9 +61,11 @@ class Digest extends React.Component {
   render() {
     return (
       <div>
-        <DigestPostList nodes={this.state} />
-        <DigestPostList nodes={this.state} />
-        <DigestPostList nodes={this.state} />
+        <DigestPostList nodes={this.state} category='Locality'/>
+        <DigestPostList nodes={this.state} category='Exposition'/>
+        <DigestPostList nodes={this.state} category='Meetup'/>
+        <DigestPostList nodes={this.state} category='Expedition'/>
+        <DigestPostList nodes={this.state} category='General'/>
       </div>
     );
   }

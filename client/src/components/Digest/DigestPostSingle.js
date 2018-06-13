@@ -6,7 +6,7 @@ export const DigestPostSingle = (props) => {
   const { node } = props;
   // const assetsRoute = 'https://image.tmdb.org/t/p/w500/';
   // const staticRoute = assetsRoute + node.poster_path;
-
+  const short = node.short_description.slice(0,120);
 
   return (
     <li className="single">
@@ -28,7 +28,7 @@ export const DigestPostSingle = (props) => {
         <div className="article-details">
           <h4 className="post-category">{ node.node_type }</h4>
           <h3 className="post-title">{ node.title }</h3>
-          <p className="post-description">{ node.short_description.slice(0, 120) }...</p>
+          <p className="post-description">{ short }...</p>
           <p className="post-author">By { node.created_by }</p>
         </div>
       </article>

@@ -5,13 +5,16 @@ import './style.css';
 
 const DigestPostList = (props) => {
   const { nodes } = props.nodes;
-  // console.log('Nodes for list: ',nodes);
+
+  console.log('Category for list', props.category);
+  console.log('Nodes for list: ', nodes );
+
   return (
     <div>
       <section className="digest-posts">
-        {/* <h3> - {nodes.length} posts</h3> */}
+        <h3>{props.category}</h3>
           <ul className="music">
-            {nodes.filter((el, index) => (index < 10))
+            {nodes.filter((el, index) => (el.node_type === props.category))
             .map(
               (el) => (
                 <DigestPostSingle
