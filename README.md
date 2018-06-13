@@ -11,7 +11,20 @@ Where i attend in the April 2018-batch, this is our first soloproject where we g
 ___
 
 ## Developers log
-June 12, 2018: Starting to abandon certain goals to be achieved for MVP: namely geolocation-to-city with google maps, upload images to server/ cdn and securing error reporting in app. This has been a massive project in terms of actions and goals, why the important thing is to scope down goals wight from the beginning. Next iteration of app could serve as more than just a prototype, with actual content tied to user location, timespan and interests.
+
+June 13, 2018: Backend and database deploying...
+- Setting up a mongodb on `mlab.com` is super easy, there are lot's of guides available, and the free tier gets you up and going in less than 5 minutes.
+- Setting up Backend on `now.sh` proved easy, but there were few guides to explore the `environment keys`, some commands were available right in `help` — but the free tier of now doesn't allow more than one instance running at the same time...
+
+June 13, 2018: Investigating deploying of demo
+- Deploying frontend to `now.sh`, a zero-configuration server right from the command line!
+- Static files (frontend) are easy to deply from an npm-enabled repo. The reporting is quite verbose and catches any errors when beeing built on server.
+- Aliases and domain name mapping available!
+
+June 12, 2018: Starting to abandon certain goals to be achieved for MVP
+- namely geolocation-to-city with google maps, upload images to server/ cdn and securing error reporting in app.
+- This has been a massive project in terms of actions and goals, why the important thing is to scope down goals wight from the beginning.
+- Next iteration of app could serve as more than just a prototype, with actual content tied to user location, timespan and interests.
 
 June 11, 2018: Adding cross-branch work to server-branch. Soon to merge into master.
  - Proved hard to maintain project goals intact, not stressed about outcome, but design is a painpoint and getting components to work without problems equally as time-consuming.
