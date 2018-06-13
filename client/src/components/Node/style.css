@@ -13,12 +13,10 @@
   align-items:center; /* align items in Cross Axis */
 }
 
-
 #nodeForm .node-form {
   max-width: 672px;
   flex: 0;
   background: var(--theme-primary-bgcolor);
-  border-radius: .8em;
   width: auto;
   margin: .5em;
   margin-bottom: 1.5em;

@@ -31,18 +31,12 @@ return (
           placeholder="Write something..."
           rows="6">
         </Textarea>
-
-          <div>
+        <div class="tag-cloud">
             <h4>What categories does this fit in?</h4>
           <TagCloud>
-            <Tag>Art</Tag>
-            <Tag>Music</Tag>
-            <Tag>Sports</Tag>
             <Tag>History</Tag>
+            <Tag>Local events</Tag>
             <Tag>Food</Tag>
-            <Tag>Clubs</Tag>
-            <Tag>Family</Tag>
-            <Tag>Politics</Tag>
           </TagCloud>
         </div>
       </form>
