@@ -75,6 +75,7 @@ export default class NodeCreate extends React.Component {
         poster_path: this.state.pictures[0].name,
         title: this.state.form_title,
         overview: this.state.form_overview,
+        short_description: this.state.form_overview,
         node_type: this.state.node_type,
         geolocation: [41.402451, 2.188092],
         created_by: this.props.TellusUser._id? this.props.TellusUser._id : '5b1edf8c46283e9b01ccf583',
