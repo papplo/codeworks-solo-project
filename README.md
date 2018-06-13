@@ -33,17 +33,18 @@ Main focus of project has been to investigate PWA: "progressive web apps", and t
 
 #### Features you might not know are accessible in js/html5/css/ on desktop/mobile:
 [whatwebcando.today](https://whatwebcando.today/)
-- Offline capabilites
-- Access files and camera
-- Non blocking page transitions
-- Bluetooth / Usb
-- Vibration, device memory
-- Notifications, Push Messages
-- Clipboard, Touch Gestures
 - Offline mode, background sync
-- Payments, credentials
+- Access files and camera, geolocation
+- Vibration, device memory, Notifications, Push Messages
+- Clipboard, Touch Gestures
 - Installed in Android, Fullscreen capabilty
-- Geolocation
+
+#### Advantages over native apps:
+- Low friction in distribution
+- Get discovered
+- Links and bookmarks
+- Push updates in background, always be fresh!
+
 
 #### Use Google Lighthouse (Chrome Devtools) to test performance:
 
@@ -99,17 +100,14 @@ Frontend NODE PACKAGES
 
     ├── server
     │   ├── src                    # Source files (devs look here!)
-    │   │   ├── actions            # Redux actions
-    │   │   ├── components         # Functional react components separated in folders
-    │   │   ├── components-styled  # Styled components to replicate ui concistently
-    │   │   ├── containers         # Class components that hold state and thus data
-    │   │   ├── reducers           # Redux reducers
-    │   │   ├── App.js, .css       # Main App component
-    │   │   ├── Index.js, .css     # Starting point of App
-    │   │   ├── store.js           # Redux store
+    │   │   ├── controller         # Controllers for Nodes and Users
+    │   │   ├── middleware         # Cors is not a middleware (blame Arol)
+    │   │   ├── model              # Models for node and user
+    │   │   ├── router             # Router for all API urls
+    │   │   ├── server.js          # Main server logic
+    │   ├── index.js               # Starting point of server and
     │   ├── package.json           # NPM dependencies and server commands `scripts:`
-    │   ├── .gitignore             # local gitignore from create-react-app
-    │   └── README.md              # Guide for create-react-app
+    │   └── README.md              # Empty readme to document our enpoints and server commands
 
 Backend Node Packages:
 ```
