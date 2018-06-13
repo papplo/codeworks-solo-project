@@ -1,5 +1,11 @@
+
 # codeworks-solo-project
-Tellus, an imaginary social digest based to discover stories, events and memories made by users in your vicinity.
+Tellus, an imaginary social digest based to discover stories, events and memories made by users in your vicinity. MVP made in early June 2018, to be continued...
+
+[![forthebadge](https://forthebadge.com/images/badges/made-with-javascript.svg)](https://forthebadge.com)
+[![forthebadge](https://forthebadge.com/images/badges/built-with-love.svg)](https://forthebadge.com)
+[![forthebadge](https://forthebadge.com/images/badges/contains-technical-debt.svg)](https://forthebadge.com)
+
 
 #### Codeworks is a 12-week Javascript Bootcamp
 Where i attend in the April 2018-batch, this is our first soloproject where we get to create a full-stack application using frameworks of our choice.
@@ -8,6 +14,99 @@ Where i attend in the April 2018-batch, this is our first soloproject where we g
 > - Juha Silventoinen, Ux-, Ui-design
 - Pablo Anttila, Full stack development
 
+---
+
+# TELLUS: an imaginary social digest based on your location and interests.
+Main focus of project has been to investigate PWA: "progressive web apps", and the capabilities a non-native app has of your client (mobile, desktop, etc).
+
+#### What is a PWA and what makes it interesting?
+
+
+---
+## </> Powered By: M.E.R.N
+![picture alt](https://github.com/papplo/codeworks-solo-project/raw/master/mern-stack.png "Powered by Mern")
+
+    REPO: Codeworks-solo-project
+    ├── client                  # Frontend with Create React App Boilerplate
+    ├── server                  # Backend with Node.js, Express, Mongoose
+    └── README.md               # That's _me_ folks!
+
+#### FRONTEND:
+
+    ├── client
+    │   ├── build                  # Compiled files with `npm run build`
+    │   ├── public                 # Static files such as images and logos
+    │   ├── src                    # Source files (devs look here!)
+    │   │   ├── actions            # Redux actions
+    │   │   ├── components         # Functional react components separated in folders
+    │   │   ├── components-styled  # Styled components to replicate ui concistently
+    │   │   ├── containers         # Class components that hold state and thus data
+    │   │   ├── reducers           # Redux reducers
+    │   │   ├── App.js, .css       # Main App component
+    │   │   ├── Index.js, .css     # Starting point of App
+    │   │   ├── store.js           # Redux store
+    │   ├── package.json           # NPM dependencies
+    │   ├── .gitignore             # local gitignore from create-react-app
+    │   └── README.md              # Guide for create-react-app
+
+Frontend NODE PACKAGES
+```
+└─
+  "react": "^16.4.0",
+  "react-dom": "^16.4.0",
+  "react-helmet": "^5.2.0",
+  "react-images-upload": "^1.1.99",
+  "react-redux": "^5.0.7",
+  "react-router-dom": "^4.3.1",
+  "react-scripts": "1.1.4",
+  "redux": "^4.0.0",
+  "redux-thunk": "^2.3.0",
+  "react-transition-group": "^2.3.1",
+  "styled-components": "^3.3.2",
+  "moment": "^2.22.2",
+  "confetti-js": "0.0.11",
+  "typeface-open-sans": "0.0.54"
+  ```
+
+#### BACKEND:
+
+    ├── server
+    │   ├── src                    # Source files (devs look here!)
+    │   │   ├── actions            # Redux actions
+    │   │   ├── components         # Functional react components separated in folders
+    │   │   ├── components-styled  # Styled components to replicate ui concistently
+    │   │   ├── containers         # Class components that hold state and thus data
+    │   │   ├── reducers           # Redux reducers
+    │   │   ├── App.js, .css       # Main App component
+    │   │   ├── Index.js, .css     # Starting point of App
+    │   │   ├── store.js           # Redux store
+    │   ├── package.json           # NPM dependencies and server commands `scripts:`
+    │   ├── .gitignore             # local gitignore from create-react-app
+    │   └── README.md              # Guide for create-react-app
+
+Backend Node Packages:
+```
+└─
+  "atob": "^2.1.1",
+  "bcrypt": "^2.0.1",
+  "body-parser": "^1.18.3",
+  "cookie-parser": "^1.4.3",
+  "cors": "^2.8.4",
+  "dotenv": "^6.0.0",
+  "express": "^4.16.3",
+  "http-errors": "^1.6.3",
+  "mongoose": "^5.1.4",
+  "uuid": "^3.2.1"
+```
+
+Backend Node Scripts:
+```
+└─  "test": "jest -i --verbose --coverage --runInBand",
+└─  "start": "node index.js",
+└─  "watch": "DEBUG=express:* nodemon index.js",
+└─  "dbon": "mkdir -p ./db && mongod --dbpath ./db",
+└─  "dboff": "killall mongod"
+```
 ___
 
 ## Developers log
@@ -55,3 +154,7 @@ I'm creating a test branch ```boilerplate-with-nextjs``` to see what the [Next.j
 
 June 5, 2018: Initialize soloproject
 ```git init, npm init, git commit 'first'!```
+
+[![forthebadge](https://forthebadge.com/images/badges/uses-badges.svg)](https://forthebadge.com)
+[![forthebadge](https://forthebadge.com/images/badges/uses-git.svg)](https://forthebadge.com)
+[![forthebadge](https://forthebadge.com/images/badges/uses-css.svg)](https://forthebadge.com)
