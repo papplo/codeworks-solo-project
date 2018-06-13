@@ -103,9 +103,9 @@ export default class NodeCreate extends React.Component {
           className= {this.state.buttonExpand && 'is-expanded'}
           color="var(--theme-primary-color)"
           onClick={() => this.toggleForm()}
-          size="true">+ {this.state.buttonExpand &&
+          size="true">{this.state.buttonExpand?
             <span
-              onClick={(e) => this.handleSubmit(e)}>Submit your post</span>}</NodeButton>
+              onClick={(e) => this.handleSubmit(e)}>Submit your post</span>: '+' }</NodeButton>
       </div>
     );
   }

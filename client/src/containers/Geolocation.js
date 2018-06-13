@@ -60,9 +60,8 @@ export default class Geolocation extends React.Component {
       <div >
         <Link to="/account" in_view="signup">
           <Button
-            color='white'
-            round='true'
-            size='true'
+            color='#84B0B9'
+            round='1'
             onClick={() => this.findGeoLocation()} >
             {this.props.value}
           </Button>

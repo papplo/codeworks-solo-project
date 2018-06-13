@@ -14,7 +14,6 @@ class Digest extends React.Component {
       nodes : JSON.parse(localStorage.getItem('TellusNodes')) || [],
       nodeTime : '',
     }
-
   }
 
 
@@ -62,10 +61,9 @@ class Digest extends React.Component {
   render() {
     return (
       <div>
-      <DigestPostList nodes={this.state} />
-      <DigestPostList nodes={this.state} />
-      <DigestPostList nodes={this.state} />
-
+        <DigestPostList nodes={this.state} />
+        <DigestPostList nodes={this.state} />
+        <DigestPostList nodes={this.state} />
       </div>
     );
   }

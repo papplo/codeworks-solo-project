@@ -54,7 +54,7 @@ componentDidMount() {
         onReturn={(value) => this.positionReturn(value)} props={this.props}/>
       </section>
       <canvas id="confetti"></canvas>
-
+      <OnboardingForm />
 
     </div>
     );
