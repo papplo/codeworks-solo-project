@@ -11,6 +11,8 @@ Where i attend in the April 2018-batch, this is our first soloproject where we g
 ___
 
 ## Developers log
+June 12, 2018: Starting to abandon certain goals to be achieved for MVP: namely geolocation-to-city with google maps, upload images to server/ cdn and securing error reporting in app. This has been a massive project in terms of actions and goals, why the important thing is to scope down goals wight from the beginning. Next iteration of app could serve as more than just a prototype, with actual content tied to user location, timespan and interests.
+
 June 11, 2018: Adding cross-branch work to server-branch. Soon to merge into master.
  - Proved hard to maintain project goals intact, not stressed about outcome, but design is a painpoint and getting components to work without problems equally as time-consuming.
  - would rather have worked without such a big framework of ideas, to just test out main goal points: how to make a PWA.
