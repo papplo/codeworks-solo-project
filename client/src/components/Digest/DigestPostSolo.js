@@ -1,6 +1,7 @@
 import React from 'react';
 import Avatar from "../../components-styled/avatar/Avatar"
 import {Input} from "../../components-styled/forms/Input"
+import { Link } from 'react-router-dom';
 
 
 export const DigestPostSolo = (props) => {
@@ -13,13 +14,20 @@ export const DigestPostSolo = (props) => {
         !props.history.location.state ?
           'Error: direct link to this url does not have object data in state - business logics for this single view will evolve...'
           :
+
           <article className="blog-card" data-tag={node.node_type_name + '/'
           + node.title_url + '/' + node._id}>
+            <div className="post-meta header-meta">
+              <Link to="/digest">
+                <img alt="" height="20px" width="14px" src="/arrowLeft.png" />
+              </Link>
+              <span className="node-type">{node.node_type}</span>
+            </div>
             <div className="post-meta">
                 <Avatar className="avatar card-avatar" color="#60da6c">
                   <img alt="" height="45px" width="45px" src="/avatar_placeholder_64x64.png" />
                   <span>{!props.TellusUser? 'Ashley King' : node.created_by}</span></Avatar>
-                  <span className="node-type">{node.node_type}</span>
+                  <span className="node-time">2 hours ago</span>
             </div>
             <div className="article-details">
               <h1 className="post-title">{ node.title }</h1>
