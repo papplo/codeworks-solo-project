@@ -16,11 +16,38 @@ Where i attend in the April 2018-batch, this is our first soloproject where we g
 
 ---
 
+![Tellus Splash](https://github.com/papplo/codeworks-solo-project/raw/master/tellus.png)
 # TELLUS: an imaginary social digest based on your location and interests.
 Main focus of project has been to investigate PWA: "progressive web apps", and the capabilities a non-native app has of your client (mobile, desktop, etc).
 
-#### What is a PWA and what makes it interesting?
+[https://tellus.now.sh](http://tellus.now.sh)
+[tellus.local](http://pablos-macbook-pro.local:3000/)
 
+#### What is a PWA and what makes it interesting?
+[Google presents their view on PWA](https://developers.google.com/web/progressive-web-apps/#engaging)
+- _Reliable_ - Load instantly and never show the downasaur, even in uncertain network conditions.
+
+- _Fast_ - Respond quickly to user interactions with silky smooth animations and no janky scrolling.
+
+- _Engaging_ - Feel like a natural app on the device, with an immersive user experience.
+
+#### Features you might not know are accessible in js/html5/css/ on desktop/mobile:
+[whatwebcando.today](https://whatwebcando.today/)
+- Offline capabilites
+- Access files and camera
+- Non blocking page transitions
+- Bluetooth / Usb
+- Vibration, device memory
+- Notifications, Push Messages
+- Clipboard, Touch Gestures
+- Offline mode, background sync
+- Payments, credentials
+- Installed in Android, Fullscreen capabilty
+- Geolocation
+
+#### Use Google Lighthouse (Chrome Devtools) to test performance:
+
+![Lighthouse logo](https://developers.google.com/web/progressive-web-apps/images/pwa-lighthouse.png)
 
 ---
 ## </> Powered By: M.E.R.N
@@ -158,3 +185,12 @@ June 5, 2018: Initialize soloproject
 [![forthebadge](https://forthebadge.com/images/badges/uses-badges.svg)](https://forthebadge.com)
 [![forthebadge](https://forthebadge.com/images/badges/uses-git.svg)](https://forthebadge.com)
 [![forthebadge](https://forthebadge.com/images/badges/uses-css.svg)](https://forthebadge.com)
+
+
+---
+#### UX DESIGN CHORE
+
+Project process followed a traditional time-to-market strategy by creating personas and tasks, follwed by wireframes and finally simple no-design mockups.
+Development was made in parallel, but suffered a lot of dead-ends as views and user-actions changed.
+
+![wireframes](https://github.com/papplo/codeworks-solo-project/raw/master/wireframes-1.png)
