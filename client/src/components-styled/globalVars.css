@@ -71,21 +71,23 @@ figure.avatar img{
 }
 
 .spinner {
-  width: 40px;
-  height: 40px;
-  margin: 0;
+  width: 20px;
+  height: 20px;
+  margin: 5px 0 0;
   background-color: var(--theme-secondary-color);
 
   border-radius: 100%;
-  -webkit-animation: sk-scaleout 1.0s infinite ease-in-out;
-  animation: sk-scaleout 1.0s infinite ease-in-out;
+  -webkit-animation: sk-scaleout 0.6s infinite ease-in-out;
+  animation: sk-scaleout 0.6s infinite ease-in-out;
 }
 
 @-webkit-keyframes sk-scaleout {
-  0% { -webkit-transform: scale(0) }
+  0% {
+    -webkit-transform: scale(0);
+    opacity: 0;
+  }
   100% {
     -webkit-transform: scale(1.0);
-    opacity: 0;
   }
 }
 
@@ -93,9 +95,10 @@ figure.avatar img{
   0% {
     -webkit-transform: scale(0);
     transform: scale(0);
+    opacity: 0;
   } 100% {
     -webkit-transform: scale(1.0);
     transform: scale(1.0);
-    opacity: 0;
+
   }
 }

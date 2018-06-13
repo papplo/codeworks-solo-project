@@ -4,7 +4,7 @@ const Button = styled.button`
 
   /* Adapt the colours based on color prop */
   background: ${
-    props => props.color ?
+    props => props.bgcolor ?
     'transparent' : 'white'};
 
   color: ${
@@ -21,10 +21,11 @@ const Button = styled.button`
 
   border-radius: ${
     props => props.round ?
-    '15px' : '3px'};
+    '25px' : '3px'};
 
-  border-radius: 3px;
-  padding: 0.25em 1em;
+  padding: .5em 1em;
+  font-family: 'Open Sans', sans-serif;
+  font-weight: 700;
   -webkit-tap-highlight-color: rgba(255,255,255,0.4);
   tap-highlight-color: rgba(255,255,255,0.4);
   outline: 0;
