@@ -24,7 +24,7 @@ const renderHeader = function () {
   }
 
   const pathName = window.location.pathname;
-  if (pathName == '/' || pathName == '/Digest') {
+  if (pathName == '/' || pathName.slice(0, 8) == '/digest/') {
     console.log(pathName, 'No Header here!');
   }
   else {
