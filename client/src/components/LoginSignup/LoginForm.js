@@ -14,12 +14,13 @@ return (
         {props.state.server_error && <p>props.state.server_message</p>}
         <Input id="username" placeholder="Username" />
         <Input id="password" placeholder="Password" />
-        <Button
-          id='login'
-          onClick={props.onSubmit}
-          color="var(--theme-primary-color)"
-          size="true">Login</Button>
       </form>
+      <Button
+        id='login'
+        onClick={props.onSubmit}
+        round="true"
+        color="var(--theme-primary-color)"
+        size="true">Login</Button>
     </section>
 
     <section className="signup-form is-centered">

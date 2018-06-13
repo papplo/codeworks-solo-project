@@ -16,12 +16,13 @@ return (
         <Input id="username" placeholder="Username" />
         <Input id="email" placeholder="E-Mail" />
         <Input id="password" placeholder="Password" />
-        <Button
-          id='signup'
-          onClick={props.onSubmit}
-          color="var(--theme-primary-color)"
-          size="true">Sign Up</Button>
       </form>
+      <Button
+        id='signup'
+        onClick={props.onSubmit}
+        round="true"
+        color="var(--theme-primary-color)"
+        size="true">Sign Up</Button>
     </section>
 
     <section className="signup-form is-centered">
