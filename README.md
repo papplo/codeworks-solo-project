@@ -24,31 +24,16 @@ Main focus of project has been to investigate PWA: "progressive web apps", and t
 [tellus.local](http://pablos-macbook-pro.local:3000/)
 
 #### What is a PWA and what makes it interesting?
-[Google presents their view on PWA](https://developers.google.com/web/progressive-web-apps/#engaging)
-- _Reliable_ - Load instantly and never show the downasaur, even in uncertain network conditions.
-
-- _Fast_ - Respond quickly to user interactions with silky smooth animations and no janky scrolling.
-
-- _Engaging_ - Feel like a natural app on the device, with an immersive user experience.
+- [Google presents their view on PWA](https://developers.google.com/web/progressive-web-apps/#engaging)
 
 #### Features you might not know are accessible in js/html5/css/ on desktop/mobile:
-[whatwebcando.today](https://whatwebcando.today/)
-- Offline mode, background sync
-- Access files and camera, geolocation
-- Vibration, device memory, Notifications, Push Messages
-- Clipboard, Touch Gestures
-- Installed in Android, Fullscreen capabilty
+- [whatwebcando.today](https://whatwebcando.today/)
 
 #### Advantages over native apps:
 - Low friction in distribution
 - Get discovered
 - Links and bookmarks
 - Push updates in background, always be fresh!
-
-
-#### Use Google Lighthouse (Chrome Devtools) to test performance:
-
-![Lighthouse logo](https://developers.google.com/web/progressive-web-apps/images/pwa-lighthouse.png)
 
 ---
 ## </> Powered By: M.E.R.N
