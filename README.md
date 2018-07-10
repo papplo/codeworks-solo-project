@@ -1,5 +1,5 @@
 
-# codeworks-solo-project
+# Tellus
 Tellus, an imaginary social digest based to discover stories, events and memories made by users in your vicinity. MVP made in early June 2018, to be continued...
 
 [![forthebadge](https://forthebadge.com/images/badges/made-with-javascript.svg)](https://forthebadge.com)
